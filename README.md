@@ -1,6 +1,6 @@
 # Référentiel RGAA-APPS
 
-Cette ressource est également [consultable en ligne](#) sans avoir à télécharger le dépôt.
+Cette ressource est également [consultable en ligne](https://disic.github.io/rgaa-apps/) sans avoir à télécharger le dépôt.
 
 Ce document a été établi dans le cadre des ressources venant accompagner la prise en main de la version 3 du référentiel général d'accessibilité pour les administrations (RGAA 3).
 
