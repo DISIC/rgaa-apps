@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>RGAA-APPS</title>
+    <meta content="Critères - RGAA-APPS" name="description" />
+    <meta content="RGAA-APPS Référentiel Général d'Accessibilité pour les Administrations, critères, tests" name="keywords" />
+    <meta content="0.1" name="version" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" media="all" href="css/rgaa.main.css" />
+    <link rel="shortcut icon" href="/sites/default/files/marianne_0.ico" type="image/vnd.microsoft.icon">
+  </head>
+  <body>
+ 		<div class="skiplinks">
+			<div class="inside">
+				<p>Accès direct&nbsp;:</p>
+				<ul>
+					<li><a href="#main">Contenu</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="rgaa-header">
+			<header role="banner" class="main-header">
+				<h1 class="slogan">Référentiel RGAA-Apps</h1>
+			</header>
+		</div>
+
+		<nav id="nav" role="navigation" aria-label="menu secondaire">
+				<ul>
+					<li><span>Critères</span></li>
+					<li><a href="glossaire.html">Glossaire</a></li>
+					<li><a href="cas-particuliers.html">Cas particuliers</a></li>
+				</ul>
+			</nav>
+
+		<div id="wrapper">
+			<div class="left" id="filtres">
+				<div class="bloc-lateral" aria-labelledby="titre-filtres" id="filtre-niveau">
+					<button id="titre-filtres">Filtres</button>
+					<div id="elt-filtres">
+						<div>
+						<input type="checkbox" id="filtre-A"/><label for="filtre-A">Niveau <span aria-label="simple-A"><span aria-hidden="true">A</span></span></label>
+						</div>
+						<div>
+						<input type="checkbox" id="filtre-AA"/><label for="filtre-AA">Niveau <span aria-label="double-A"><span aria-hidden="true">AA</span></span></label>
+						</div>
+						<div>
+						<input type="checkbox" id="filtre-AAA"/><label for="filtre-AAA">Niveau <span aria-label="triple-A"><span aria-hidden="true">AAA</span></span></label>
+						</div>
+					</div>
+				</div>
+				<div class="bloc-lateral" aria-labelledby="titre-thematiques">
+					<button id="titre-thematiques">Thématiques</button>
+					<ol id="nav-thematiques">
+						<li><a href="#element-graphique">Éléments graphiques</a></li>
+						<li><a href="#couleurs">Couleurs</a></li>
+						<li><a href="#multimedia">Multimédia</a></li>
+						<li><a href="#tableaux">Tableaux</a></li>
+						<li><a href="#composants">Composants</a></li>
+						<li><a href="#elements">Éléments obligatoires</a></li>
+						<li><a href="#structure">Structuration de l'information</a></li>
+						<li><a href="#presentation">Présentation de l'information</a></li>
+						<li><a href="#formulaire">Formulaires</a></li>
+						<li><a href="#navigation">Navigation</a></li>
+						<li><a href="#consultation">Consultation</a></li>
+						<li><a href="#mobile">Mobile</a></li>
+					</ol>
+				</div>
+			</div>
+
+			<div class="right">
+
+			<section aria-labelledby="main-title">
+
+				<main tabindex="-1" id="main" role="main">
+
+					<h1 id="main-title">Critères</h1>
+
+					<h2 id="guide">Mode d'emploi</h2>
+
+					<div id="display-guide">
+						<p>Ce guide permet d'évaluer les interfaces graphiques des applications logicielles en environnement de bureau ou les applications mobiles. Une <a href="rgaa_apps-grille-de-test-full.ods">grille d'évaluation (ods, 160 ko)</a> est mise à votre disposition pour accompagner vos tests.</p>
+
+						<h3>Périmètre d'application du référentiel</h3>
+						<p>Le présent référentiel s'attache à évaluer l'accessibilité des interfaces graphiques des logiciels non web, c'est-à-dire des logiciels qui s'exécutent dans un environnement de bureau ou sur un smartphone, via les technologies natives ou non, présentent sur les plateformes.</p>
+						<p>Dans le cas d'applications qui ont vocation à créer du contenu, il faut distinguer l'interface du contenu en édition. Une application peut permettre de créer du contenu&nbsp;:</p>
+						<ul>
+							<li>web&nbsp;: par exemple un éditeur de texte qui permet de modifier une page HTML&nbsp;;</li>
+							<li>ou non web&nbsp;: par exemple un traitement de texte qui permet de modifier des documents bureautiques.</li>
+						</ul>
+						<p>Dans ces cas, ce référentiel ne s'attache à évaluer que l'accessibilité de l'interface, c'est-à-dire les composants qui permettent la production du contenu (widget, bouton, barre d'outils, fenêtres de paramètres&hellip;), mais il n'évalue pas le contenu en édition ni la capacité de l'application à produire du contenu accessible.</p>
+						<p>L'évaluation du contenu en édition dépend d'autres référentiels ou guides, comme le RGAA, s'il s'agit de contenu web, ou les guides de production de contenus bureautiques, s'il s'agit de contenus PDF, Word ou LibreOffice par exemple.</p>
+
+						<h3>Méthode de validation</h3>
+						<p>Le niveau de conformité est établi au niveau des critères selon ces statuts&nbsp;:</p>
+						<ul>
+							<li>Conforme (C)&nbsp;: l'ensemble des tests applicables sont réussis&nbsp;;</li>
+							<li>Non Conforme (NC)&nbsp;: un test applicable est mis en échec, au moins&nbsp;;</li>
+							<li>Non Applicable (NA)&nbsp;: il n'y a pas de contenu concerné par le critère.</li>
+						</ul>
+						<p>RGAA propose, en plus de ces trois statuts de validation, deux statuts complémentaires&nbsp;:</p>
+						<ul>
+							<li>Dérogé (D)&nbsp;: il existe des contenus dérogés applicables au critère&nbsp;;</li>
+							<li>Non Testé (NT)&nbsp;: le critère n'a pas été testé.</li>
+						</ul>
+
+						<h3>Capacité des technologies</h3>
+						<p>Compte tenu de la diversité des technologies logicielles disponibles sur le marché, les critères de ce référentiel ne concernent pas une technologie particulière&nbsp;: par exemple un langage ou une API liée à un logiciel ou à un système d'exploitation. Il s'agit donc de critères suffisamment génériques pour pouvoir s'adapter à la majorité des cas d'applications.</p>
+
+						<h3>Méthodologie</h3>
+						<p>Contrairement aux contenus web pour lesquels il est possible d'inspecter le code source afin de déterminer la présence de tel élément ou tel attribut, il est très difficile pour les interfaces logicielles de procéder de la même manière. D'une part, parce que cela demanderait des compétences techniques élevées (on accède au logiciel, mais rarement à son «&nbsp;code&nbsp;» contrairement à un site web). D'autre part, parce que contrairement au web et aux technologies (HTML/CSS/JavaScript), il existe un nombre trop important d'environnements de développement pour pouvoir définir une liste de tests basée sur la revue de code.</p>
+						<p>C'est la raison pour laquelle l'approche choisie est de tester la présence de certains éléments au travers d'outils spécialisés (inspecteurs d'interfaces, technologies d'assistance) ou directement sur l'interface elle-même.</p> 
+						<p>Par exemple, lorsque l'interface contient un élément graphique porteur d'information, le critère demande de vérifier qu'une alternative est disponible et pertinente sans donner plus de précisions sur les techniques à employer pour mettre à disposition une alternative à un élément graphique.</p>
+						<p>Ces techniques peuvent être très différentes selon les langages et les technologies, il peut s'agir d'une propriété native, d'une propriété issue d'une API d'accessibilité ou de tout autre moyen.</p>
+						<p>Nous vous renvoyons aux documentations des éditeurs de langage et de logiciels de création d'application dans lesquelles se trouvent les dispositifs à respecter, les propriétés à utiliser et, pour certaines, des outils spécialisés pour inspecter l'interface ou le code. Nous mettons ci-après à disposition une section de ressources choisies.</p>
+
+						<h3>Ressources</h3>
+
+						<p>Pour une introduction aux API d'accessibilité et aux inspecteurs d'interfaces, nous renvoyons à la section <a href="https://disic.github.io/guide-developpeur/6-lecteur-ecran.html">«&nbsp;Comment un lecteur d'écran sait-il de quoi il parle&nbsp;?&nbsp;»</a> du guide du développeur.</p>
+
+						<h4>Inspecteurs d'interfaces</h4>
+						<p>Les inspecteurs d'interfaces sont des outils qui permettent d'accéder aux propriétés définies dans le code des logiciels pour tous les composants d'interfaces graphiques. Ces outils vous permettent d'accéder au nom accessible, à l'état déclaré, à la valeur et à de nombreuses autres propriétés.</p>
+						<ul>
+							<li><a href="https://msdn.microsoft.com/fr-fr/library/windows/desktop/dd318521(v=vs.85).aspx" hreflang="en" lang="en">Inspect (Windows)</a>&nbsp;;</li>
+							<li><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html#//apple_ref/doc/uid/TP40001078-CH210-SW1" hreflang="en" lang="en">Accessibility Inspector (OSX / macOS)</a>&nbsp;;</li>
+							<li><a href="https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityiniOSSimulatorwithAccessibilityInspector/TestAccessibilityiniOSSimulatorwithAccessibilityInspector.html#//apple_ref/doc/uid/TP40012619-CH4-SW1" hreflang="en" lang="en">Accessibility Inspector (iOS)</a>&nbsp;;</li>
+							<li><a href="https://wiki.gnome.org/action/show/Apps/Accerciser">Accerciser (Environnement GNOME sur Linux)</a>&nbsp;;</li>
+							<li><a href="https://developer.android.com/training/accessibility/testing.html#automated" hreflang="en"><span lang="en">UI Automator Viewer</span> (Android)</a>.</li>
+						</ul>
+
+						<h4>API et accessibilité&nbsp;: documentation des principaux éditeurs</h4>
+						<ul>
+							<li><a href="https://msdn.microsoft.com/fr-fr/library/ms726294(vs.85).aspx" hreflang="en">Présentation de <span lang="en">UI Automation</span> (Windows)</a> et le <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ee671633(v=vs.85).aspx">détail des propriétés, patterns et événements des différents composants mis à disposition par l'API</a>&nbsp;;</li>
+							<li><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html" hreflang="en" lang="en">Présentation de l'accessibilité sur OSX</a> et <a href="https://developer.apple.com/documentation/uikit/accessibility/uiaccessibility" hreflang="en">la liste des propriétés mise à disposition par l'API d'accessibilité</a>&nbsp;;</li>
+							<li><a href="https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html#//apple_ref/doc/uid/TP40008785-CH100-SW6" hreflang="en">Présentation de l'accessibilité sur iOS, détails des propriétés et états essentiels pour l'accessibilité</a>&nbsp;;</li>
+							<li><a href="https://developer.android.com/guide/topics/ui/accessibility/index.html#resources" hreflang="en">Développement accessible pour Android</a>&nbsp;;</li>
+							<li><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html" hreflang="en" lang="en">How Accessibility Works in GNOME (Linux)</a>.</li>
+						</ul>
+
+						<h4>Technologies d'assistance</h4>
+						<ul>
+							<li><a href="https://www.nvaccess.org/" hreflang="en">NVDA (lecteur d'écran <span lang="en">Windows</span>)</a>&nbsp;;</li>
+							<li><a href="http://www.freedomscientific.com/Products/Blindness/JAWS" hreflang="en">JAWS (lecteur d'écran <span lang="en">Windows</span>)</a>&nbsp;;</li>
+							<li><span lang="en">Voice Over</span> <a href="https://help.apple.com/voiceover/info/guide/10.12/?lang=fr">(lecteur d'écran <span lang="en">Apple</span> macOS</a>, <a href="https://www.apple.com/fr/accessibility/iphone/vision/">lecteur d'écran <span lang="en">Apple</span> iOS</a>)&nbsp;;</li>
+							<li><a href="https://help.gnome.org/users/orca/stable/">Orca (lecteur d'écran pour l'environnement GNOME Linux)</a>&nbsp;;</li>
+							<li><a href="https://support.google.com/accessibility/android/answer/6283677?hl=fr&ref_topic=3529932">Talkback (lecteur d'écran <span lang="en">Android</span>)</a>&nbsp;;</li>
+							<li><a href="https://support.microsoft.com/fr-fr/help/10669/windows-phone-use-narrator-on-my-phone">Narrator (lecteur d'écran <span lang="en">Windows</span>, environnement mobile)</a>.</li>
+						</ul>
+
+						<h4>Aide à l'évaluation dans les environnements mobiles</h4>
+						<ul>
+							<li><a href="https://github.com/DISIC/guide-mobile_app_audit">Guide d'audit d'applications mobiles</a>&nbsp;;</li>
+							<li><a href="https://developer.android.com/training/accessibility/testing.html#accessibility-scanner" hreflang="en"><span lang="en">Accessibility Scanner</span> (Application de détection d'erreurs d'accessibilité pour les applications Android)</a>.</li>
+						</ul>
+
+						<h3>Références</h3>
+						<p>Ce référentiel RGAA-APPS se base sur les documents suivants&nbsp;:</p>
+						<ul>
+							<li><a href="http://references.modernisation.gouv.fr/rgaa/">RGAA&nbsp;3 (DINSIC)</a>&nbsp;;</li>
+							<li><a href="https://www.w3.org/TR/wcag2ict/" lang="en" hreflang="en" title="WCAG2ICT : WCAG 2.0 to Non-Web Information and Communications Technologies">WCAG2ICT (W3C)</a>&nbsp;;</li>
+							<li><a href="https://github.com/DISIC/referentiel-mobile-tactile">Référentiel spécifique aux plateformes mobiles/tactiles (DINSIC)</a>&nbsp;;</li>
+							<li><a href="http://www-03.ibm.com/able/guidelines/software/software.html" hreflang="en" lang="en">IBM Software checklist</a>.</li>
+						</ul>
+					</div>
+
+				<section tabindex="-1" id="element-graphique">
+				<header>
+					<h2>1. Éléments graphiques</h2>
+
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Donner à chaque élément graphique porteur d'information une alternative textuelle pertinente et une description détaillée si nécessaire. Remplacer les éléments graphiques textes par du texte stylé lorsque c'est possible.</p>
+				</header>
+
+				<article id="crit-1-1" data-level="A">
+					<h3 class="critere">Critère 1.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#elt-graphique-deco">élément graphique de décoration</a> est-il <a href="glossaire.html#ignore-ta">ignoré par les technologies d'assistance&nbsp;</a>?</h3>
+				</article>
+
+				<article id="crit-1-2" data-level="A">
+					<h3 class="critere">Critère 1.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#elt-graphique-porteur-dinformation">élément graphique porteur d'information</a> possède-t-il une alternative <a href="glossaire.html#accessible-aux-technologies">accessible aux technologies d'assistance</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-1-3" data-level="A">
+					<h3 class="critere">Critère 1.3 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#elt-graphique-porteur-dinformation">élément graphique porteur d'information</a>, l'alternative <a href="glossaire.html#accessible-aux-technologies">accessible aux technologies d'assistance</a> est-elle pertinente (hors <a href="cas-particuliers.html#cp-1-3" title="Cas particuliers pour le critère 1.3">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-1-4" data-level="A">
+					<h3 class="critere">Critère 1.4 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#elt-graphique">élément graphique</a> utilisé comme <a href="glossaire.html#captcha">CAPTCHA</a> ou comme <a href="glossaire.html#elt-graphique-test">élément graphique test</a>, l'alternative restituée par les technologies d'assistance permet-elle d'identifier la nature et la fonction de l'image&nbsp;?</h3>
+				</article>
+
+				<article id="crit-1-5" data-level="A">
+					<h3 class="critere">Critère 1.5 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#elt-graphique">élément graphique</a> utilisé comme <a href="glossaire.html#captcha">CAPTCHA</a> respecte-t-il une de ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>Il existe une autre forme de CAPTCHA non graphique, au moins.</li>
+					  <li>Il existe une autre solution d'accès à la fonctionnalité sécurisée par le CAPTCHA.</li>
+					</ul>
+				</article>
+
+				<article id="crit-1-6" data-level="A">
+					<h3 class="critere">Critère 1.6 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#elt-graphique-porteur-dinformation">élément graphique porteur d'information</a> a-t-il, si nécessaire, une <a href="glossaire.html#description-dtaille-elt-graphique">description détaillée</a>&nbsp;?</h3>
+					<p>Chaque élément graphique porteur d'information qui nécessite une description détaillée vérifie-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+						<li>Depuis l'élément graphique, les technologies d'assistance restituent ou donnent accès à une description détaillée.</li>
+					  <li>Il existe une description détaillée clairement identifiable adjacente à l'élément graphique.</li>
+					  <li>Il existe une fonctionnalité (via un bouton par exemple) permettant d'accéder au contenu de la description détaillée.</li>
+					</ul>
+				</article>
+
+				<article id="crit-1-7" data-level="A">
+					<h3 class="critere">Critère 1.7 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#elt-graphique-porteur-dinformation">élément graphique porteur d'information</a> ayant une <a href="glossaire.html#description-dtaille-elt-graphique">description détaillée</a>, la description détaillée est-elle pertinente&nbsp;?</h3>
+					<p>Chaque élément graphique porteur d'information qui possède une description détaillée vérifie-t-il ces conditions&nbsp;?</p>
+					<ul>
+						<li>Depuis l'élément graphique, la description détaillée restituée par les technologies d'assistance est pertinente.</li>
+					  <li>La description détaillée adjacente à l'élément graphique est pertinente.</li>
+					  <li>La description détaillée accessible depuis une fonctionnalité est pertinente.</li>
+					</ul>
+				</article>
+
+				<article id="crit-1-8" data-level="AA">
+					<h3 class="critere">Critère 1.8 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Chaque <a href="glossaire.html#elt-graphique-texte">élément graphique texte</a> <a href="glossaire.html#elt-graphique-porteur-dinformation">porteur d'information</a>, en l'absence d'un <a href="glossaire.html#mcanisme-de-remplacement">mécanisme de remplacement</a>, doit si possible être remplacé par du texte stylé. Cette règle est-elle respectée (hors <a href="cas-particuliers.html#cp-1-8" title="Cas particuliers pour le critère 1.8">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-1-9" data-level="AAA">
+					<h3 class="critere">Critère 1.9 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Chaque <a href="glossaire.html#elt-graphique-texte">élément graphique texte</a> <a href="glossaire.html#elt-graphique-porteur-dinformation">porteur d’information</a> doit si possible être remplacé par du texte stylé. Cette règle est-elle respectée (hors <a href="cas-particuliers.html#cp-1-8" title="Cas particuliers pour le critère 1.9">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				</section>
+
+				<section tabindex="-1" id="couleurs">
+					<header>
+					<h2>2. Couleurs</h2>
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Ne pas donner l'information uniquement par la couleur et utiliser des contrastes de couleurs suffisamment élevés.</p>
+					</header>
+
+				<article id="crit-2-1" data-level="A">
+					<h3 class="critere">Critère 2.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, l'<a href="glossaire.html#information-donne-par-la-couleur">information</a> ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée&nbsp;?</h3>
+					<p>Sont concernés les mots ou ensemble de mots, les textes, les images porteuses d'information et les médias temporels.</p>
+				</article>
+
+				<article id="crit-2-2" data-level="A">
+					<h3 class="critere">Critère 2.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, l'<a href="glossaire.html#information-donne-par-la-couleur">information</a> ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon <a href="glossaire.html#pertinence-information-autrement-que-par-la-couleur">pertinente</a>&nbsp;?</h3>
+					<p>Sont concernés les mots ou ensemble de mots, les textes, les images porteuses d'information et les médias temporels.</p>
+				</article>
+
+				<article id="crit-2-3" data-level="AA">
+					<h3 class="critere">Critère 2.3 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque écran, le <a href="glossaire.html#contraste">contraste</a> entre la couleur du texte et la couleur de son arrière-plan est-il suffisamment élevé (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.3">cas particuliers</a>)&nbsp;?</h3>
+
+						<ul>
+							<li id="test-2-3-1">Test 2.3.1&nbsp;: Dans chaque écran, <a href="glossaire.html#taille-caracteres-contraste">jusqu'à 150% de la taille de police par défaut</a>, le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.3">cas particuliers</a>)&nbsp;?
+								<ul>
+								  <li>Le rapport de <a href="glossaire.html#contraste">contraste</a> entre le texte et son arrière-plan est de 4.5:1, au moins.</li>
+								  <li>Un mécanisme permet à l'utilisateur d'afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+								</ul>
+							</li>
+							<li id="test-2-3-2">Test 2.3.2&nbsp;: Dans chaque écran, <a href="glossaire.html#taille-caracteres-contraste">jusqu'à 120% de la taille de police par défaut</a>, le texte et le texte en image en gras vérifient-ils une de ces conditions (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.3">cas particuliers</a>)&nbsp;?
+								<ul>
+								  <li>Le rapport de <a href="glossaire.html#contraste">contraste</a> entre le texte et son arrière-plan est de 4.5:1, au moins.</li>
+								  <li>Un mécanisme permet à l'utilisateur d'afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+								</ul>
+							</li>
+							<li id="test-2-3-3">Test 2.3.3&nbsp;: Dans chaque écran, <a href="glossaire.html#taille-caracteres-contraste">à partir de 150% de la taille de police par défaut</a>, le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.3">cas particuliers</a>)&nbsp;?
+								<ul>
+								  <li>Le rapport de <a href="glossaire.html#contraste">contraste</a> entre le texte et son arrière-plan est de 3:1, au moins.</li>
+								  <li>Un mécanisme permet à l'utilisateur d'afficher le texte avec un rapport de contraste de 3:1, au moins.</li>
+								</ul>
+							</li>
+							<li id="test-2-3-4">Test 2.3.4&nbsp;: Dans chaque écran, <a href="glossaire.html#taille-caracteres-contraste">à partir de 120% de la taille de police par défaut</a>, le texte et le texte en image en gras vérifient-ils une de ces conditions (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.3">cas particuliers</a>)&nbsp;?
+								<ul>
+								  <li>Le rapport de <a href="glossaire.html#contraste">contraste</a> entre le texte et son arrière-plan est de 3:1, au moins.</li>
+								  <li>Un mécanisme permet à l'utilisateur d'afficher le texte avec un rapport de contraste de 3:1, au moins.</li>
+								</ul>
+							</li>
+							<li id="test-2-3-5">Test 2.3.5&nbsp;: Chaque <a href="glossaire.html#mcanisme-contraste">mécanisme qui permet d'afficher le texte avec un rapport de contraste conforme</a> a-t-il un rapport de contraste supérieur ou égal à 4,5:1&nbsp;?</li>
+						</ul>
+				</article>
+
+				<article id="crit-2-4" data-level="AAA">
+					<h3 class="critere">Critère 2.4 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, le <a href="glossaire.html#contraste">contraste</a> entre la couleur du texte et la couleur de son arrière-plan est-il amélioré (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.4">cas particuliers</a>)&nbsp;?</h3>
+
+						<ul>
+							<li id="test-2-4-1">Test 2.4.1&nbsp;: Dans chaque écran, <a href="glossaire.html#taille-caracteres-contraste">jusqu'à 150% de la taille de police par défaut</a>, le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.4">cas particuliers</a>)&nbsp;?
+								<ul>
+								  <li>Le rapport de <a href="glossaire.html#contraste">contraste</a> entre le texte et son arrière-plan est de 7:1, au moins.</li>
+								  <li>Un mécanisme permet à l'utilisateur d'afficher le texte avec un rapport de contraste de 7:1, au moins.</li>
+								</ul>
+							</li>
+							<li id="test-2-4-2">Test 2.4.2&nbsp;: Dans chaque écran, <a href="glossaire.html#taille-caracteres-contraste">jusqu'à 120% de la taille de police par défaut</a>, le texte et le texte en image en gras vérifient-ils une de ces conditions (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.4">cas particuliers</a>)&nbsp;?
+								<ul>
+								  <li>Le rapport de <a href="glossaire.html#contraste">contraste</a> entre le texte et son arrière-plan est de 7:1, au moins.</li>
+								  <li>Un mécanisme permet à l'utilisateur d'afficher le texte avec un rapport de contraste de 7:1, au moins.</li>
+								</ul>
+							</li>
+							<li id="test-2-4-3">Test 2.4.3&nbsp;: Dans chaque écran, <a href="glossaire.html#taille-caracteres-contraste">à partir de 150% de la taille de police par défaut</a>, le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.4">cas particuliers</a>)&nbsp;?
+								<ul>
+								  <li>Le rapport de <a href="glossaire.html#contraste">contraste</a> entre le texte et son arrière-plan est de 4.5:1, au moins.</li>
+								  <li>Un mécanisme permet à l'utilisateur d'afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+								</ul>
+							</li>
+							<li id="test-2-4-4">Test 2.4.4&nbsp;: Dans chaque écran, <a href="glossaire.html#taille-caracteres-contraste">à partir de 120% de la taille de police par défaut</a>, le texte et le texte en image en gras vérifient-ils une de ces conditions (hors <a href="cas-particuliers.html#cp-2-3" title="Cas particuliers pour le critère 2.4">cas particuliers</a>)&nbsp;?
+								<ul>
+								  <li>Le rapport de <a href="glossaire.html#contraste">contraste</a> entre le texte et son arrière-plan est de 4.5:1, au moins.</li>
+								  <li>Un mécanisme permet à l'utilisateur d'afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+								</ul>
+							</li>
+							<li id="test-2-4-5">Test 2.4.5&nbsp;: Chaque <a href="glossaire.html#mcanisme-contraste">mécanisme qui permet d'afficher le texte avec un rapport de contraste conforme</a> a-t-il un rapport de contraste supérieur ou égal à 7:1&nbsp;?</li>
+						</ul>
+				</article>
+
+				</section>
+
+
+				<section tabindex="-1" id="multimedia">
+					<header>
+					<h2>3. Multimédia</h2>
+
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Donner si nécessaire à chaque média temporel une transcription textuelle, des sous-titres synchronisés et une audiodescription synchronisée pertinents. Rendre possible le contrôle de la consultation de chaque média temporel et non temporel au clavier et s'assurer de leur compatibilité avec les technologies d'assistance.</p>
+					</header>
+
+				<article id="crit-3-1" data-level="A">
+					<h3>Critère 3.1  [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré seulement audio a-t-il une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a> <a href="glossaire.html#adjacent-identifiable">adjacente clairement identifiable</a> (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.1">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-2" data-level="A">
+					<h3>Critère 3.2  [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré seulement vidéo possède-t-il, si nécessaire, une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a> ou une <a href="glossaire.html#audiodescription-synchronise-media-temporel">audiodescription</a> synchronisée (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.2">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il une ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Il existe une <a href="glossaire.html#version-alternative-audio-seulement">version alternative «&nbsp;audio seulement&nbsp;»</a> <a href="glossaire.html#adjacent-identifiable">adjacente clairement identifiable</a>.</li>
+					  <li>Il existe une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a> <a href="glossaire.html#adjacent-identifiable">adjacente clairement identifiable</a>.</li>
+					  <li>Il existe une <a href="glossaire.html#audiodescription-synchronise-media-temporel">audiodescription</a> synchronisée.</li>
+					  <li>Il existe une version alternative avec une audiodescription synchronisée accessible avec une fonctionnalité (un bouton par exemple) adjacente.</li>
+					</ul>
+				</article>
+
+				<article id="crit-3-3" data-level="A">
+					<h3>Critère 3.3  [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> synchronisé pré-enregistré possède-t-il, si nécessaire, une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a> ou une <a href="glossaire.html#audiodescription-synchronise-media-temporel">audiodescription</a> synchronisée (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.3">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque média temporel synchronisé pré-enregistré vérifie-t-il une ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Il existe une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a> <a href="glossaire.html#adjacent-identifiable">adjacente clairement identifiable</a>.</li>
+					  <li>Il existe une <a href="glossaire.html#audiodescription-synchronise-media-temporel">audiodescription</a> synchronisée.</li>
+					  <li>Il existe une version alternative avec une audiodescription synchronisée accessible avec une fonctionnalité (un bouton par exemple) adjacente.</li>
+					</ul>
+				</article>
+
+				<article id="crit-3-4" data-level="A">
+					<h3 class="critere">Critère 3.4 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré (seulement audio, seulement vidéo ou synchronisé) ayant une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a>, celle-ci est-elle pertinente (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.4">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-5" data-level="A">
+					<h3 class="critere">Critère 3.5 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré (seulement vidéo ou synchronisé) ayant une <a href="glossaire.html#audiodescription-synchronise-media-temporel">audiodescription</a> synchronisée, celle-ci est-elle pertinente (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.5">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-6" data-level="A">
+					<h3 class="critere">Critère 3.6 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré seulement vidéo ayant une <a href="glossaire.html#version-alternative-audio-seulement">version alternative audio seulement</a>, celle-ci est-elle pertinente (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.6">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-7" data-level="A">
+					<h3 class="critere">Critère 3.7 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> synchronisé pré-enregistré a-t-il, si nécessaire, des <a href="glossaire.html#soustitres-synchroniss-objet-multimdia">sous-titres synchronisés</a> (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.7">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque média temporel synchronisé vérifie-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+						<li>Le média temporel synchronisé possède des <a href="glossaire.html#soustitres-synchroniss-objet-multimdia">sous-titres synchronisés</a>.</li>
+						<li>Il existe une version alternative possédant des sous-titres synchronisés accessible avec une fonctionnalité (un bouton par exemple) adjacente.</li>
+					</ul>
+				</article>
+
+				<article id="crit-3-8" data-level="A">
+					<h3 class="critere">Critère 3.8 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> synchronisé pré-enregistré ayant des <a href="glossaire.html#soustitres-synchroniss-objet-multimdia">sous-titres synchronisés</a>, ces sous-titres sont-ils pertinents&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-9" data-level="AA">
+					<h3 class="critere">Critère 3.9 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> en direct ou seulement audio en direct a-t-il, si nécessaire, des <a href="glossaire.html#soustitres-synchroniss-objet-multimdia">sous-titres synchronisés</a> ou une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a> (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.9">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque média temporel en direct ou seulement audio en direct vérifie-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Il existe des <a href="glossaire.html#soustitres-synchroniss-objet-multimdia">sous-titres synchronisés</a>.</li>
+					  <li>Il existe une version ayant des sous-titres synchronisés accessible avec une fonctionnalité (un bouton par exemple) adjacente.</li>
+					  <li>Il existe une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a> <a href="glossaire.html#adjacent-identifiable">adjacente clairement identifiable</a>.</li>
+					</ul>
+				</article>
+
+				<article id="crit-3-10" data-level="AA">
+					<h3 class="critere">Critère 3.10 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> en direct ou seulement audio en direct ayant des <a href="glossaire.html#soustitres-synchroniss-objet-multimdia">sous-titres synchronisés</a>, ceux-ci sont-ils pertinents&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-11" data-level="AA">
+					<h3 class="critere">Critère 3.11 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> en direct ou seulement audio en direct ayant une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a>, celle-ci est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-12" data-level="AA">
+					<h3 class="critere">Critère 3.12 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré (synchronisé ou seulement vidéo) a-t-il, si nécessaire, une <a href="glossaire.html#audiodescription-synchronise-media-temporel">audiodescription</a> synchronisée (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.12">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque média temporel synchonisé pré-enregistré (synchronisé ou seulement vidéo) vérifie-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Il existe une <a href="glossaire.html#audiodescription-synchronise-media-temporel">audiodescription</a> synchronisée.</li>
+					  <li>Il existe une version alternative avec une audiodescription synchronisée.</li>
+					</ul>
+				</article>
+
+				<article id="crit-3-13" data-level="AA">
+					<h3 class="critere">Critère 3.13 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré (synchronisé ou seulement vidéo) ayant une <a href="glossaire.html#audiodescription-synchronise-media-temporel">audiodescription</a> synchronisée, celle-ci est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-14" data-level="AAA">
+					<h3 class="critere">Critère 3.14 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré (synchronisé ou seulement vidéo) a-t-il, si nécessaire, une interprétation en langue des signes (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.14">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-15" data-level="AAA">
+					<h3 class="critere">Critère 3.15 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré (synchronisé ou seulement audio) ayant une interprétation en langue des signes, celle-ci est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-16" data-level="AAA">
+					<h3 class="critere">Critère 3.16 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré (synchronisé ou seulement audio) a-t-il, si nécessaire, une <a href="glossaire.html#audiodescription-tendue">audiodescription étendue</a> synchronisée (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.16">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque média temporel pré-enregistré (synchronisé ou seulement audio) vérifie-t-il une de ces conditions&nbsp;?</p>
+						<ul>
+						  <li>Il existe une <a href="glossaire.html#audiodescription-tendue">audiodescription étendue</a> synchronisée.</li>
+						  <li>Il existe une version alternative avec une audiodescription étendue synchronisée.</li>
+						</ul>
+				</article>
+
+				<article id="crit-3-17" data-level="AAA">
+					<h3 class="critere">Critère 3.17 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> pré-enregistré (synchronisé ou seulement vidéo) ayant une <a href="glossaire.html#audiodescription-tendue">audiodescription étendue</a> synchronisée, celle-ci est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-18" data-level="AAA">
+					<h3 class="critere">Critère 3.18 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> synchronisé ou seulement vidéo a-t-il, si nécessaire, une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a> <a href="glossaire.html#adjacent-identifiable">adjacente clairement identifiable</a> (hors <a href="cas-particuliers.html#cp-3-1etc" title="Cas particuliers pour le critère 3.18">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-19" data-level="AAA">
+					<h3 class="critere">Critère 3.19 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> synchronisé ou seulement vidéo, ayant une <a href="glossaire.html#transcription-textuelle-media-temporel">transcription textuelle</a>, celle-ci est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-20" data-level="A">
+					<h3 class="critere">Critère 3.20 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> est-il clairement identifiable (hors <a href="cas-particuliers.html#cp-3-20" title="Cas particuliers pour le critère 3.20">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-21" data-level="A">
+					<h3 class="critere">Critère 3.21 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#controle-son">séquence sonore déclenchée automatiquement</a> est-elle contrôlable par l'utilisateur&nbsp;?</h3>
+					<p>Chaque séquence sonore déclenchée automatiquement vérifie-t-elle une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>La séquence sonore a une durée inférieure ou égale à 3 secondes.</li>
+					  <li>La séquence sonore peut être stoppée sur action de l'utilisateur.</li>
+					  <li>Le volume de la séquence sonore peut être contrôlé par l'utilisateur indépendamment du contrôle de volume du système.</li>
+					</ul>
+				</article>
+
+				<article id="crit-3-22" data-level="AAA">
+					<h3 class="critere">Critère 3.22 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> seulement audio pré-enregistré, les dialogues sont-ils suffisamment audibles (hors <a href="cas-particuliers.html#cp-3-22" title="Cas particuliers pour le critère 3.22">cas particuliers</a>)&nbsp;?</h3>
+					<ul>
+					  <li>L'arrière-plan sonore peut être désactivé.</li>
+					  <li>La ou les pistes de dialogue sont 20 décibels plus élevés que l'arrière-plan sonore.</li>
+					  <li>Il existe une version alternative pour laquelle l'arrière-plan sonore peut être désactivé.</li>
+					  <li>Il existe une version alternative pour laquelle la ou les pistes de dialogue sont 20 décibels plus élevés que l'arrière-plan sonore.</li>
+					</ul>
+				</article>
+				
+				<article id="crit-3-23" data-level="A">
+					<h3>Critère 3.23 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> a-t-il, si nécessaire, les <a href="glossaire.html#contrle-de-la-consultation-dun-media-temporel">fonctionnalités de contrôle</a> de sa consultation&nbsp;?</h3>
+				</article>
+				
+				<article id="crit-3-24" data-level="A">
+					<h3>Critère 3.24 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a>, chaque fonctionnalité est-elle <a href="glossaire.html#accessible-et-activable-clavier-souris">accessible au clavier et à la souris</a> ou  l'interface dispose d'une fonctionnalité accessible au clavier et à la souris qui permet de réaliser la même action&nbsp;?</h3>
+				</article>
+
+				<article id="crit-3-25" data-level="A">
+					<h3 class="critere">Critère 3.25 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> est-il <a href="glossaire.html#compatible-avec-les-technologies-dassistance">compatible avec les technologies d'assistance</a> (hors <a href="cas-particuliers.html#cp-3-25" title="Cas particuliers pour le critère 3.25">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque média temporel vérifie-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Le nom, le rôle, la valeur, le paramétrage et les changements d'état des composants d'interfaces sont accessibles aux technologies d'assistance par l'intermédiaire d'une API d'accessibilité.</li>
+					  <li>Une alternative <a href="glossaire.html#compatible-avec-les-technologies-dassistance">compatible avec une API d'accessibilité</a> permet d'accéder aux mêmes fonctionnalités.</li>
+					</ul>
+				</article>
+				
+				<article id="crit-3-26" data-level="A">
+					<h3 class="critere">Critère 3.26 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#mdia-temporel-type-son-vido-et-synchronis">média temporel</a> qui possède une alternative <a href="glossaire.html#compatible-avec-les-technologies-dassistance">compatible avec les technologies d'assistance</a> vérifie-t-il une de ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>L'alternative est <a href="glossaire.html#adjacent-identifiable">adjacente</a> au média temporel.</li>
+					  <li>Un mécanisme permet de remplacer le média temporel par son alternative.</li>
+					</ul>
+				</article>
+
+				</section>
+
+				<section tabindex="-1" id="tableaux">
+					<header>
+						<h2>4. Tableaux</h2>
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Donner à chaque tableau de données complexe, un résumé et un titre pertinent, utiliser un mécanisme pertinent pour lier les cellules de données aux cellules d'en-tête.</p>
+					</header>
+
+				<article id="crit-4-1" data-level="A">
+					<h3 class="critere">Critère 4.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#tableau-de-donnes-complexe">tableau de données complexe</a> a-t-il un <a href="glossaire.html#rsum-de-tableau">résumé</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-4-2" data-level="A">
+					<h3 class="critere">Critère 4.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#tableau-de-donnes-complexe">tableau de données complexe</a> ayant un <a href="glossaire.html#rsum-de-tableau">résumé</a>, celui-ci est-il pertinent&nbsp;?</h3>
+				</article>
+
+				<article id="crit-4-3" data-level="A">
+					<h3 class="critere">Critère 4.3 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#tableau-de-donnes">tableau de données</a> a-t-il un <a href="glossaire.html#titreTab">titre</a>&nbsp;?</h3>
+				</article>
+				<article id="crit-4-4" data-level="A">
+					<h3 class="critere">Critère 4.4 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#tableau-de-donnes">tableau de données</a> ayant un <a href="glossaire.html#titreTab">titre</a>, celui-ci est-il pertinent&nbsp;?</h3>
+				</article>
+
+				<article id="crit-4-5" data-level="A">
+					<h3 class="critere">Critère 4.5 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#tableau-de-donnes">tableau de données</a>, les en-têtes de lignes et de colonnes sont-ils correctement déclarés&nbsp;?</h3>
+				</article>
+
+				</section>
+
+				<section tabindex="-1" id="composants">
+					<header>
+						<h2>5. Composants</h2>
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Rendre possible le contrôle de chaque composant au moins au clavier et à la souris et s'assurer de leur compatibilité avec les technologies d'assistance.</p>
+					</header>
+
+				<article id="crit-5-1" data-level="A">
+					<h3 class="critere">Critère 5.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#composant-interface">composant d'interface</a> respecte-t-il ces conditions&nbsp;?</h3>
+					<ul>
+						<li>Le composant possède un <a href="glossaire.html#le-nom-le-rle-la-valeur-le-paramtrage-et-les-changements-dtats">nom</a> pertinent.</li>
+						<li>Le composant possède un <a href="glossaire.html#le-nom-le-rle-la-valeur-le-paramtrage-et-les-changements-dtats">rôle</a> pertinent.</li>
+						<li>Le composant possède une <a href="glossaire.html#le-nom-le-rle-la-valeur-le-paramtrage-et-les-changements-dtats">valeur</a> pertinente.</li>
+						<li>Le composant possède un <a href="glossaire.html#le-nom-le-rle-la-valeur-le-paramtrage-et-les-changements-dtats">état</a> pertinent.</li>
+						<li><a href="glossaire.html#le-nom-le-rle-la-valeur-le-paramtrage-et-les-changements-dtats">Le nom, le rôle, la valeur, le paramétrage et les changements d'état</a> sont <a href="glossaire.html#accessible-aux-technologies">accessibles aux technologies d'assistance</a>.</li>
+					</ul>
+				</article>
+
+				<article id="crit-5-2" data-level="A">
+					<h3 class="critere">Critère 5.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#composant-interface">composant d'interface complexe</a> respecte-t-il une de ces conditions&nbsp;?</h3>
+					<ul>
+						<li>Le composant est <a href="glossaire.html#accessible-aux-technologies">accessible aux technologies d'assistance</a>.</li>
+					  <li>Un <a href="glossaire.html#composant-interface">composant d'interface</a> accessible permettant d'accéder aux mêmes fonctionnalités est présent dans l'écran.</li>
+					</ul>
+				</article>
+
+				<article id="crit-5-3" data-level="A">
+					<h3 class="critere">Critère 5.3 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#composant-interface">composant d'interface</a> est-il <a href="glossaire.html#accessible-et-activable-clavier-souris">accessible au clavier et à la souris</a> (hors <a href="cas-particuliers.html#cp-5-3" title="Cas particuliers pour le critère 5.3">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-5-4" data-level="A">
+					<h3 class="critere">Critère 5.4 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#composant-interface">composant d'interface</a> est-il <a href="glossaire.html#accessible-et-activable-clavier-souris">activable au clavier et à la souris</a> (hors <a href="cas-particuliers.html#cp-5-3" title="Cas particuliers pour le critère 5.4">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-5-5" data-level="A">
+					<h3 class="critere">Critère 5.5 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#changement-de-contexte">changement de contexte</a> respecte-t-il une de ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>L'utilisateur est averti par un texte de l'action du script et du type de changement avant son déclenchement.</li>
+					  <li>Le changement de contexte est initié par une action de l'utilisateur sur un composant ayant un nom explicite.</li>
+					</ul>
+				</article>
+
+				<article id="crit-5-6" data-level="AAA">
+					<h3 class="critere">Critère 5.6 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Chaque <a href="glossaire.html#alerte">alerte</a> non sollicitée est-elle contrôlable par l'utilisateur (hors <a href="cas-particuliers.html#cp-5-6" title="Cas particuliers pour le critère 5.6">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+
+				</section>
+
+				<section tabindex="-1" id="elements">
+					<header>
+					<h2>6. Éléments obligatoires</h2>
+
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Vérifier que chaque écran a un titre pertinent et que l'écran est restitué par les technologies d'assistance dans la langue de traitement principale. Vérifier que les composants qui possèdent une sémantique ne sont pas utilisés uniquement à des fins de présentation, que les changements de langue et de direction de sens de lecture sont correctement restitués par les technologies d'assistances.</p>
+					</header>
+
+				<article id="crit-6-1" data-level="A">
+					<h3 class="critere">Critère 6.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque écran est-il restitué par les technologies d'assistance dans la langue de traitement principale&nbsp;?</h3>
+				</article>
+				
+				<article id="crit-6-2" data-level="A">
+					<h3 class="critere">Critère 6.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque écran a-t-il un <a href="glossaire.html#titrePage">titre</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-6-3" data-level="A">
+					<h3 class="critere">Critère 6.3 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque écran ayant un <a href="glossaire.html#titrePage">titre</a>, ce titre est-il pertinent&nbsp;?</h3>
+				</article>
+
+				<article id="crit-6-4" data-level="AA">
+					<h3 class="critere">Critère 6.4 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque écran, chaque <a href="glossaire.html#changement-de-langue">élément dans une langue étrangère</a> est-il correctement indiqué pour être accessible aux technologies d'assistance (hors <a href="cas-particuliers.html#cp-6-4" title="Cas particuliers pour le critère 6.4">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-6-5" data-level="A">
+					<h3 class="critere">Critère 6.5 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, les éléments d'interface ne doivent pas être utilisés <a href="glossaire.html#uniquement--des-fins-de-prsentation">uniquement à des fins de présentation</a>. Cette règle est-elle respectée&nbsp;?</h3>
+				</article>
+
+				<article id="crit-6-6" data-level="A">
+					<h3 class="critere">Critère 6.6 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, chaque changement du sens de lecture est-il correctement indiqué pour être accessible aux technologies d'assistance&nbsp;?</h3>
+				</article>
+
+				</section>
+
+				<section tabindex="-1" id="structure">
+					<header>
+						<h2>7. Structuration de l'information</h2>
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Utiliser des titres, des listes, des abréviations et des citations pour structurer l'information. S'assurer que la structure du document est cohérente.</p>
+					</header>
+
+				<article id="crit-7-1" data-level="A">
+					<h3 class="critere">Critère 7.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, l'information est-elle structurée par l'utilisation appropriée de <a href="glossaire.html#titre">titres</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-7-2" data-level="A">
+					<h3 class="critere">Critère 7.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, chaque <a href="glossaire.html#listes">liste</a> est-elle correctement structurée&nbsp;?</h3>
+				</article>
+
+				<article id="crit-7-3" data-level="AAA">
+					<h3 class="critere">Critère 7.3 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, la première occurrence de chaque abréviation permet-elle d'en connaître la signification&nbsp;?</h3>
+					<p>Chaque abréviation respecte au moins une de ces conditions&nbsp;:</p>
+					<ul>
+					  <li>L'abréviation est accompagnée de sa signification sous forme d'un texte adjacent.</li>
+					  <li>L'abréviation est implémentée avec une fonctionnalité référençant une localisation ou un emplacement dans l'écran qui permet d'en connaître la signification.</li>
+					  <li>La signification de l'abréviation est présente dans un glossaire accessible depuis l'écran.</li>
+					  <li>L'abréviation est contenue dans un élément possédant une infobulle qui contient la signification.</li>
+					</ul>
+				</article>
+
+				<article id="crit-7-4" data-level="AAA">
+					<h3 class="critere">Critère 7.4 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, la signification de chaque abréviation est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				</section>
+
+				<section tabindex="-1" id="presentation">
+					<header>
+					<h2>8. Présentation de l'information</h2>
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Vérifier l'effet de l'agrandissement des tailles des caractères sur la lisibilité. S'assurer que les liens sont correctement identifiables, que la prise de focus est signalée, que l'interlignage est suffisant et donner la possibilité à l'utilisateur de contrôler la justification des textes. S'assurer que l'information n'est pas donnée uniquement par la forme ou la position d'un élément.</p>
+					</header>
+
+				<article id="crit-8-1" data-level="A">
+					<h3 class="critere">Critère 8.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, l'utilisation des espaces vérifie-t-elle ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>Les espaces ne sont pas utilisés pour séparer les lettres d'un mot.</li>
+					  <li>Les espaces ne sont pas utilisés pour simuler des tableaux.</li>
+					  <li>Les espaces ne sont pas utilisés pour simuler des colonnes de texte.</li>
+					</ul>
+				</article>
+
+				<article id="crit-8-2" data-level="AA">
+					<h3 class="critere">Critère 8.2 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque écran, l'utilisateur peut-il <a href="glossaire.html#augmenter-taille-police">augmenter la taille des caractères de 200% au moins</a> (hors <a href="cas-particuliers.html#cp-8-7" title="Cas particuliers pour le critère 8.2">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-3" data-level="AA">
+					<h3 class="critere">Critère 8.3 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque écran, <a href="glossaire.html#augmenter-taille-police">l'augmentation de la taille des caractères à 200% au moins</a> ne provoque pas de perte d'informations. Cette règle est-elle respectée&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-4" data-level="A">
+					<h3 class="critere">Critère 8.4 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, chaque <a href="glossaire.html#cpt-nature-pas-evidente">composant dont la nature n'est pas évidente</a> a-t-il un rapport de <a href="glossaire.html#contraste">contraste</a> supérieur ou égal à 3:1 par rapport au texte environnant&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-5" data-level="A">
+					<h3 class="critere">Critère 8.5&nbsp;[<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, pour chaque élément recevant le focus, la <a href="glossaire.html#prise-de-focus">prise de focus</a> est-elle visible&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-6" data-level="A">
+					<h3 class="critere">Critère 8.6&nbsp;[<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, pour chaque <a href="glossaire.html#cpt-nature-pas-evidente">composant signalé uniquement par la couleur</a>, une indication autre que la couleur permet-elle de signaler la <a href="glossaire.html#prise-de-focus">prise de focus</a> et le survol à la souris&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-7" data-level="AAA">
+					<h3 class="critere">Critère 8.7 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, les <a href="glossaire.html#parametres-couleur">paramètres de couleurs définis par l'utilisateur pour la plateforme</a> s'appliquent-ils à tous les éléments (hors <a href="cas-particuliers.html#cp-8-7" title="Cas particuliers pour le critère 8.7">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-8" data-level="AAA">
+					<h3 class="critere">Critère 8.8 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, les <a href="glossaire.html#parametres-couleur">paramètres de couleurs définis par l'utilisateur pour la plateforme</a> ne provoquent pas de perte d'informations. Cette règle est-elle respectée&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-9" data-level="AAA">
+					<h3 class="critere">Critère 8.9 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque écran, le texte n'est pas justifié ou un mécanisme permet à l'utilisateur de supprimer la justification du texte. Cette règle est-elle respectée&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-10" data-level="AAA">
+					<h3 class="critere">Critère 8.10 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque écran, les blocs de texte ont-ils une largeur inférieure ou égale à 80 caractères (hors <a href="cas-particuliers.html#cp-8-10" title="Cas particuliers pour le critère 8.10">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque bloc de texte respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Chaque bloc de texte a une largeur inférieure ou égale à 80 caractères.</li>
+					  <li>L'utilisateur peut réduire la largeur de chaque bloc de texte à 80 caractères en redimensionnant la fenêtre de l'application.</li>
+					</ul>
+				</article>
+
+				<article id="crit-8-11" data-level="AAA">
+					<h3 class="critere">Critère 8.11 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque écran, la valeur de l'interligne est égale à 1,5 fois la taille du texte, au moins, ou un mécanisme permet d’augmenter la valeur de l’interligne d’au moins 1,5 fois la taille du texte, au moins. Cette règle est-elle respectée&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-12" data-level="AAA">
+					<h3 class="critere">Critère 8.12 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque écran, la valeur de l'espacement entre deux paragraphes est égale à 1,5 fois la valeur de l'interligne, au moins ou un mécanisme permet d’augmenter la valeur de l’espacement d’au moins 1,5 fois la taille de l'interligne. Cette règle est-elle respectée&nbsp;?</h3>
+				</article>
+
+				<article id="crit-8-13" data-level="A">
+					<h3 class="critere">Critère 8.13 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, l'information ne doit pas être donnée uniquement <a href="glossaire.html#indication-forme-taille-position">par la forme, taille ou position</a>. Cette règle est-elle respectée&nbsp;?</h3>
+					<p>Sont concernés les mots ou ensemble de mots, les textes, les images porteuses d'informations et les médias temporels.</p>
+				</article>
+
+				<article id="crit-8-14" data-level="A">
+					<h3 class="critere">Critère 8.14 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, l'information ne doit pas être donnée <a href="glossaire.html#indication-forme-taille-position">par la forme, taille ou position</a> uniquement. Cette règle est-elle implémentée de façon pertinente&nbsp;?</h3>
+					<p>Sont concernés les mots ou ensemble de mots, les textes, les images porteuses d'informations et les médias temporels.</p>
+				</article>
+
+				</section>
+
+				<section tabindex="-1" id="formulaire">
+					<header>
+					<h2>9. Formulaires</h2>
+
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Associer pour chaque formulaire chacun de ses champs à son étiquette, grouper les champs dans des blocs d'informations de même nature, structurer les listes de choix de manière pertinente, donner à chaque bouton un intitulé explicite. Vérifier la présence d'aide à la saisie, s'assurer que le contrôle de saisie est accessible et que l'utilisateur peut contrôler les données à caractère financier, juridique ou personnel.</p>
+					</header>
+
+				<article id="crit-9-1" data-level="A">
+					<h3 class="critere">Critère 9.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a> a-t-il une <a href="glossaire.html#tiquette-de-champs-de-formulaire">étiquette</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-2" data-level="A">
+					<h3 class="critere">Critère 9.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#tiquette-de-champs-de-formulaire">étiquette</a> associée à un <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a> est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-3" data-level="AA">
+					<h3 class="critere">Critère 9.3 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque formulaire, chaque <a href="glossaire.html#tiquette-de-champs-de-formulaire">étiquette</a> associée à un <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a> ayant la même fonction et répété plusieurs fois dans un même écran ou dans un <a href="glossaire.html#ensemble-d-ecrans">ensemble d'écrans</a> est-elle <a href="glossaire.html#tiquettes-cohrentes">cohérente</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-4" data-level="A">
+					<h3 class="critere">Critère 9.4 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque formulaire, chaque <a href="glossaire.html#tiquette-de-champs-de-formulaire">étiquette de champ</a> et son <a href="glossaire.html#champ-de-saisie-de-formulaire">champ</a> associé sont-ils <a href="glossaire.html#accoles">accolés</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-5" data-level="A">
+					<h3 class="critere">Critère 9.5 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque formulaire, les <a href="glossaire.html#bloc-dinformations-de-mme-nature">informations de même nature</a> sont-elles regroupées, si nécessaire&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-6" data-level="A">
+					<h3 class="critere">Critère 9.6 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque formulaire, chaque <a href="glossaire.html#bloc-dinformations-de-mme-nature">regroupement de champs de formulaire</a> a-t-il une légende&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-7" data-level="A">
+					<h3 class="critere">Critère 9.7 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque formulaire, chaque légende associée à un <a href="glossaire.html#bloc-dinformations-de-mme-nature">groupement de champs de formulaire</a> est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-8" data-level="A">
+					<h3 class="critere">Critère 9.8 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque formulaire, chaque <a href="glossaire.html#liste-de-choix">liste de choix</a> est-elle structurée de manière pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-9" data-level="A">
+					<h3 class="critere">Critère 9.9 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque formulaire, l'intitulé de chaque <a href="glossaire.html#bouton-formulaire">bouton</a> est-il pertinent&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-10" data-level="A">
+					<h3 class="critere">Critère 9.10 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque formulaire, les indications de champs obligatoires sont-elles accessibles&nbsp;?</h3>
+					<p>Chaque champ obligatoire respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>L'indication de champ obligatoire est donnée dans l'<a href="glossaire.html#tiquette-de-champs-de-formulaire">étiquette</a> du champ de formulaire.</li>
+					  <li>L'indication de champ obligatoire est donnée par un passage de texte situé avant le <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a>.</li>
+					</ul>
+				</article>
+
+				<article id="crit-9-11" data-level="A">
+					<h3 class="critere">Critère 9.11 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque formulaire, les erreurs de saisie sont-elles accessibles&nbsp;?</h3>
+					<p>Chaque erreur de saisie respecte-t-elle une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>L'erreur de saisie est indiquée dans l'<a href="glossaire.html#tiquette-de-champs-de-formulaire">étiquette</a> du <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a>.</li>
+					  <li>L'erreur de saisie est indiquée par un <a href="glossaire.html#passage-avant-champ">passage de texte avant le champ de formulaire</a>.</li>
+					</ul>
+				</article>
+
+				<article id="crit-9-12" data-level="A">
+					<h3 class="critere">Critère 9.12 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque formulaire, chaque champ obligatoire indique-t-il le type de données et/ou de format attendu&nbsp;?</h3>
+					<p>Chaque champ obligatoire respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+						<li>Le <a href="glossaire.html#type-et-format-de-donnes">type de données et/ou de format</a> est indiqué, si nécessaire, dans l'<a href="glossaire.html#tiquette-de-champs-de-formulaire">étiquette</a> du champ.</li>
+					  <li>Le type de données et/ou de format est indiqué, si nécessaire, par un  <a href="glossaire.html#passage-avant-champ">passage de texte avant le champ de formulaire</a>.</li>
+					</ul>
+				</article>
+
+				<article id="crit-9-13" data-level="AA">
+					<h3 class="critere">Critère 9.13 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque formulaire, le <a href="glossaire.html#contrle-de-saisie-formulaire">contrôle de saisie</a> est-il accompagné, si nécessaire, de suggestions des <a href="glossaire.html#type-et-format-de-donnes">types et formats de données</a> attendus&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-14" data-level="AA">
+					<h3 class="critere">Critère 9.14 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque formulaire, le <a href="glossaire.html#contrle-de-saisie-formulaire">contrôle de saisie</a> est-il accompagné, si nécessaire, de suggestions de valeurs attendues&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-15" data-level="AA">
+					<h3 class="critere">Critère 9.15 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Pour chaque formulaire, la saisie des données à caractère financier, juridique ou personnelle vérifie-t-elle une de ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>L'utilisateur peut modifier ou annuler les données et les actions effectuées sur ces données après leur saisie.</li>
+					  <li>L'utilisateur peut vérifier et corriger les données avant la validation du formulaire.</li>
+					  <li>Un mécanisme de confirmation explicite, via un <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a> ou une étape supplémentaire, est présent.</li>
+					</ul>
+				</article>
+
+				<article id="crit-9-16" data-level="AA">
+					<h3 class="critere">Critère 9.16 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Pour chaque formulaire, la suppression des données à caractère financier, juridique ou personnelle vérifie-t-elle une de ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>Un mécanisme permet de récupérer les données supprimées par l'utilisateur.</li>
+					  <li>Un mécanisme de confirmation explicite de la suppression, via un <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a> ou une étape supplémentaire, est présent.</li>
+					</ul>
+				</article>
+
+
+				<article id="crit-9-17" data-level="AAA">
+					<h3 class="critere">Critère 9.17 [<span aria-label="triple-AA"><span aria-hidden="true">AAA</span></span>] Pour chaque formulaire, la saisie des données vérifie-t-elle une de ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>L'utilisateur peut modifier ou annuler les données et les actions effectuées sur ces données après leur saisie.</li>
+					  <li>L'utilisateur peut vérifier et corriger les données avant la validation du formulaire.</li>
+					  <li>Un mécanisme de confirmation explicite, via un <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a> ou une étape supplémentaire, est présent.</li>
+					</ul>
+				</article>
+
+				<article id="crit-9-18" data-level="AAA">
+					<h3 class="critere">Critère 9.18 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque formulaire, la suppression des données  vérifie-t-elle une de ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>Un mécanisme permet de récupérer les données supprimées par l'utilisateur.</li>
+					  <li>Un mécanisme de confirmation explicite de la suppression, via un <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a> ou une étape supplémentaire, est présent.</li>
+					</ul>
+				</article>
+
+				<article id="crit-9-19" data-level="AAA">
+					<h3 class="critere">Critère 9.19 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque formulaire, des aides à la saisie sont-elles présentes&nbsp;?</h3>
+					<p>Chaque champ de formulaire respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Il existe un lien vers une page d'aide.</li>
+					  <li>Il existe des indications avant le formulaire.</li>
+					  <li>Il existe des indications avant les <a href="glossaire.html#champ-de-saisie-de-formulaire">champs de formulaire</a>.</li>
+					  <li>Il existe des indications dans l'<a href="glossaire.html#tiquette-de-champs-de-formulaire">étiquette</a> du champ de formulaire.</li>
+					  <li>Un assistant est disponible.</li>
+					</ul>
+				</article>
+
+				<article id="crit-9-20" data-level="AAA">
+					<h3 class="critere">Critère 9.20 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque formulaire, chaque champ de type texte vérifie-t-il, si nécessaire, l'une de ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>Un correcteur orthographique est disponible.</li>
+					  <li>Des suggestions de saisie sont disponibles avant le champ du formulaire.</li>
+					  <li>Des suggestions de saisie sont disponibles dans l'<a href="glossaire.html#tiquette-de-champs-de-formulaire">étiquette</a> du <a href="glossaire.html#champ-de-saisie-de-formulaire">champ de formulaire</a>.</li>
+					</ul>
+				</article>
+
+				<article id="crit-9-21" data-level="AAA">
+					<h3 class="critere">Critère 9.21 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Pour chaque formulaire, chaque aide à la saisie est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-9-22" data-level="A">
+					<h3 class="critere">Critère 9.22 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque champ de saisie qui attend un format de saisie particulier déclenche-t-il les <a href="glossaire.html#controles-natifs">contrôles natifs de la plateforme relatifs au format</a>&nbsp;?</h3>
+				</article>
+
+				</section>
+
+				<section tabindex="-1" id="navigation">
+					<header>
+					<h2>10. Navigation</h2>
+
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Faciliter la navigation dans un ensemble d'écrans, permettre l'accès aux fonctionnalités de premier niveau par au moins deux moyens. S'assurer que la restitution par les technologies d'assistance est logique et cohérente et que la page ne comporte pas de piège au clavier.</p>
+					</header>
+
+				<article id="crit-10-1" data-level="AA">
+					<h3 class="critere">Critère 10.1 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Chaque <a href="glossaire.html#fonctionnalite-premier-niveau">fonctionnalité de premier niveau doit être activable, si nécessaire, de deux façons au moins</a>. Cette règle est-elle respectée&nbsp;?</h3>
+				</article>
+
+				<article id="crit-10-2" data-level="A">
+					<h3 class="critere">Critère 10.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque écran est-il organisé en <a href="glossaire.html#conteneurs">conteneurs</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-10-3" data-level="AA">
+					<h3 class="critere">Critère 10.3 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque écran, les menus et barres d'outils sont-ils toujours à la même place dans la présentation&nbsp;?</h3>
+				</article>
+
+				<article id="crit-10-4" data-level="AA">
+					<h3 class="critere">Critère 10.4 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque écran, les menus et barres d'outils se présentent-ils toujours dans le même ordre relatif de tabulation&nbsp;?</h3>
+				</article>
+	
+				<article id="crit-10-5" data-level="AA">
+					<h3 class="critere">Critère 10.5 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque écran, les menus et barres d'outils ont-ils une présentation cohérente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-10-6" data-level="AA">
+					<h3 class="critere">Critère 10.6 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Dans chaque écran d'une collection d'écrans, une fonctionnalité facilitant la navigation entre les écrans est-elle présente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-10-7" data-level="A">
+					<h3 class="critere">Critère 10.7 <span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, l'ordre de restitution par les technologies d'assistance est-il <a href="glossaire.html#ordre-de-restitution">cohérent</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-10-8" data-level="A">
+					<h3 class="critere">Critère 10.8 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, la navigation ne doit pas contenir de piège au clavier. Cette règle est-elle respectée&nbsp;?</h3>
+					<p>Chaque écran respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+						<li>Il est possible d'atteindre l'élément suivant ou précédent pouvant recevoir le focus avec la touche de tabulation.</li>
+						<li>L'utilisateur est informé d'un mécanisme fonctionnel permettant d'atteindre au clavier l'élément suivant ou précédent pouvant recevoir le focus.</li>
+					</ul>
+				</article>
+
+				<article id="crit-10-9" data-level="AA">
+					<h3 class="critere">Critère 10.9 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>] Le logiciel ne modifie pas les fonctions associées aux <a href="glossaire.html#raccourcis-claviers">raccourcis clavier propres à la plateforme</a>. Cette règle est-elle respectée&nbsp;?</h3>
+				</article>
+
+				</section>
+
+				<section tabindex="-1" id="consultation">
+					<header>
+					<h2>11. Consultation</h2>
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Vérifier que l'utilisateur a le contrôle des procédés de rafraîchissement, des changements brusques de luminosité, des ouvertures de nouvelles fenêtres et des contenus en mouvement ou clignotants. Indiquer lorsqu'un contenu s'ouvre dans une nouvelle fenêtre et donner des informations relatives à la consultation des fichiers en téléchargement. Ne pas faire dépendre l'accomplissement d'une tâche d'une limite de temps sauf si elle est essentielle et s'assurer que les données saisies sont récupérées après une interruption de session authentifiée. S'assurer que les expressions inhabituelles et le jargon sont explicités. Proposer des versions accessibles ou rendre accessibles les documents en téléchargement.
+						</p>
+					</header>
+				<article id="crit-11-1" data-level="A">
+					<h3 class="critere">Critère 11.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque écran, l'utilisateur a-t-il le contrôle de chaque limite de temps modifiant le contenu (hors <a href="cas-particuliers.html#cp-11-1" title="Cas particuliers pour le critère 11.1">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque limite de temps respecte-t-elle une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>L'utilisateur peut arrêter ou relancer le rafraîchissement.</li>
+					  <li>L'utilisateur peut augmenter la limite de temps entre deux rafraîchissements de dix fois, au moins.</li>
+					  <li>L'utilisateur est averti de l'imminence du rafraîchissement et dispose de vingt secondes, au moins, pour augmenter la limite de temps avant le prochain rafraîchissement.</li>
+					  <li>La limite de temps entre deux rafraîchissements est de vingt heures, au moins.</li>
+					</ul>
+				</article>
+	
+				<article id="crit-11-2" data-level="A">
+					<h3 class="critere">Critère 11.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque écran, chaque procédé limitant le temps d'une session peut-il être arrêté ou supprimé (hors <a href="cas-particuliers.html#cp-11-1" title="Cas particuliers pour le critère 11.2">cas particuliers</a>)&nbsp;?</h3>
+					<p>Chaque procédé limitant le temps d'une session respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>L'utilisateur peut supprimer la limite de temps.</li>
+					  <li>L'utilisateur peut augmenter la limite de temps.</li>
+					  <li>La limite de temps avant la fin de la session est de vingt heures au moins.</li>
+					</ul>
+				</article>
+
+				<article id="crit-11-3" data-level="A">
+					<h3 class="critere">Critère 11.3 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, pour chaque action qui déclenche un <a href="glossaire.html#changement-agent-utilisateur">changement d'agent utilisateur</a>, l'utilisateur est-il averti&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-4" data-level="AAA">
+					<h3 class="critere">Critère 11.4 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, une tâche ne doit pas requérir de limite de temps pour être réalisée, sauf si elle se déroule en temps réel ou si cette limite de temps est essentielle. Cette règle est-elle respectée&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-5" data-level="AAA">
+					<h3 class="critere">Critère 11.5 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, lors d'une interruption de session authentifiée, les données saisies par l'utilisateur sont-elles récupérées après réauthentification&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-6" data-level="A">
+					<h3 class="critere">Critère 11.6 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, pour chaque fichier en téléchargement, des informations relatives à sa consultation (poids, format et langue si nécessaire) sont-elles présentes (hors <a href="cas-particuliers.html#cp-11-6" title="Cas particuliers pour le critère 11.6">cas particuliers</a>)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-7" data-level="A">
+					<h3 class="critere">Critère 11.7 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, chaque document bureautique en téléchargement possède-t-il, si nécessaire, une <a href="glossaire.html#version-accessible-document">version accessible</a>&nbsp;?</h3>
+					<p>Chaque document en téléchargement respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Le document en téléchargement est compatible avec l'accessibilité.</li>
+					  <li>Il existe une version alternative du document en téléchargement compatible avec l'accessibilité.</li>
+					</ul>
+				</article>
+
+				<article id="crit-11-8" data-level="A">
+					<h3 class="critere">Critère 11.8 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque document bureautique ayant une <a href="glossaire.html#version-accessible-document">version accessible</a>, cette version offre-t-elle la même information&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-9" data-level="AAA">
+					<h3 class="critere">Critère 11.9 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, les expressions inhabituelles, les expressions idiomatiques ou le jargon sont-ils explicités&nbsp;?</h3>
+					<p>Chaque expression inhabituelle, idiomatique ou le jargon respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Il existe une définition dans le contexte adjacent de l'expression.</li>
+					  <li>Il existe une définition dans une liste de définitions.</li>
+					  <li>Il existe une définition dans l'écran.</li>
+					</ul>
+				</article>
+
+				<article id="crit-11-10" data-level="AAA">
+					<h3 class="critere">Critère 11.10 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, pour chaque expression inhabituelle ou limitée, idiomatique ou de jargon ayant une définition, cette définition est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-11" data-level="A">
+					<h3 class="critere">Critère 11.11 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, chaque contenu cryptique (art ASCII, émoticon, syntaxe cryptique) a-t-il une alternative&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-12" data-level="A">
+					<h3 class="critere">Critère 11.12 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, pour chaque contenu cryptique (art ASCII, émoticon, syntaxe cryptique) ayant une alternative, cette alternative est-elle pertinente&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-13" data-level="AAA">
+					<h3 class="critere">Critère 11.13 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, pour chaque mot dont le sens ne peut être compris sans en connaître la prononciation, celle-ci est-elle indiquée (de manière adjacente ou via une fonctionnalité)&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-14" data-level="AAA">
+					<h3 class="critere">Critère 11.14 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, chaque texte qui nécessite un niveau de lecture plus avancé que le premier cycle de l'enseignement secondaire (hors noms propres et titre) a-t-il une version alternative&nbsp;?</h3>
+					<p>Chaque texte qui nécessite un niveau de lecture plus avancé que le premier cycle de l'enseignement secondaire respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>Une illustration ou des symboles graphiques adaptés au niveau de lecture du premier cycle de l'enseignement secondaire sont présents.</li>
+					  <li>Une version en Langue des Signes Française est présente.</li>
+					  <li>Une version vocalisée du texte est présente.</li>
+					  <li>Un résumé adapté au niveau de lecture du premier cycle de l'enseignement secondaire est présent.</li>
+					</ul>
+				</article>
+
+				<article id="crit-11-15" data-level="A">
+					<h3 class="critere">Critère 11.15 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, les <a href="glossaire.html#changements-brusques-de-luminosite">changements brusques de luminosité ou les effets de flash</a> vérifient-ils une de ces conditions&nbsp;?</h3>
+					<ul>
+					  <li>La fréquence de l'effet est inférieure à 3 par seconde.</li>
+					  <li>La surface totale cumulée des effets est inférieure ou égale à 21&nbsp;824 pixels.</li>
+					</ul>
+				</article>
+
+				<article id="crit-11-16" data-level="AAA">
+					<h3 class="critere">Critère 11.16 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Dans chaque écran, les <a href="glossaire.html#changements-brusques-de-luminosite">changements brusques de luminosité ou les effets de flash</a> ont-ils une fréquence inférieure ou égale à 3 par seconde&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-17" data-level="A">
+					<h3 class="critere">Critère 11.17 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Dans chaque écran, chaque contenu en mouvement ou clignotant est-il <a href="glossaire.html#controle-mouvement">contrôlable</a> par l'utilisateur&nbsp;?</h3>
+					<p>Chaque contenu en mouvement ou clignotant respecte-t-il une de ces conditions&nbsp;?</p>
+					<ul>
+					  <li>La durée du mouvement ou du clignotement est inférieure ou égale à 5 secondes.</li>
+					  <li>L'utilisateur peut arrêter et relancer le mouvement ou le clignotement.</li>
+					  <li>L'utilisateur peut afficher et masquer le contenu en mouvement ou clignotant.</li>
+					  <li>L'utilisateur peut afficher la totalité de l'information sans le mouvement ou le clignotement.</li>
+					</ul>
+				</article>
+
+				<article id="crit-11-18" data-level="A">
+					<h3 class="critere">Critère 11.18 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Le logiciel propose-t-il de remplacer les <a href="glossaire.html#alerte-sonore">alertes sonores</a> par des <a href="glossaire.html#alt-non-sonore">alternatives non sonores</a>&nbsp;?</h3>
+				</article>
+
+				<article id="crit-11-19" data-level="A">
+					<h3 class="critere">Critère 11.19 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] La documentation décrit-elle les fonctionnalités particulières relatives à l'accessibilité&nbsp;?</h3>
+				</article>
+
+				</section>
+
+				<section tabindex="-1" id="mobile">
+					<header>
+					<h2>12. Mobile</h2>
+						<h3 class="reco">Recommandation&nbsp;:</h3>
+						<p>Vérifier que chaque zone sensible a une taille suffisante. Vérifier que les interactions gestuelles complexes ont des alternatives.</p>
+					</header>
+					<article id="crit-12-1" data-level="A">
+						<h3 class="critere">Critère 12.1 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#zone-sensible">zone sensible</a> a-t-elle une <a href="glossaire.html#taille-suffisante">taille suffisante</a>&nbsp;?</h3>
+						<p>Chaque zone sensible respecte-t-elle ces conditions&nbsp;? </p>
+						<ul>
+							<li>La largeur de la <a href="glossaire.html#zone-sensible">zone sensible</a> fait 9 mm au moins.</li>
+							<li>La hauteur de la <a href="glossaire.html#zone-sensible">zone sensible</a> fait 9 mm au moins.</li>
+							<li>La <a href="glossaire.html#zone-sensible">zone sensible</a> a une <a href="glossaire.html#marge-suffisante">marge extérieure suffisante</a>.</li>
+						</ul>
+					</article>
+
+					<article id="crit-12-2" data-level="A">
+						<h3 class="critere">Critère 12.2 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Pour chaque <a href="glossaire.html#interaction-gestuelle">interaction gestuelle</a> déclenchant une action, l'action est-elle déclenchée de manière appropriée&nbsp;?</h3>
+						<p>Chaque interaction gestuelle déclenchant une action respecte-t-elle ces conditions&nbsp;?</p>
+						<ul>
+							<li>L'action est déclenchée uniquement à la fin de l'interaction gestuelle.</li>
+							<li>L'action n'est pas déclenchée si l'élément déclencheur perd le focus.</li>
+						</ul>
+					</article>
+
+					<article id="crit-12-3" data-level="A">
+						<h3 class="critere">Critère 12.3 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#interaction-gestuelle-complexe">interaction gestuelle complexe</a> spécifique à l'application a-t-elle une alternative&nbsp;?</h3>
+						<p>Chaque interaction gestuelle complexe spécifique à l'application respecte-t-elle une de ces conditions&nbsp;? </p>
+						<ul>
+							<li>L'interaction gestuelle possède une alternative non gestuelle.</li>
+							<li>Un paramètre permet à l'utilisateur d'utiliser des <a href="glossaire.html#interaction-gestuelle">interactions gestuelles</a> simplifiées.</li>
+						</ul>
+					</article>
+
+					<article id="crit-12-4" data-level="AAA">
+						<h3 class="critere">Critère 12.4 [<span aria-label="triple-A"><span aria-hidden="true">AAA</span></span>] Chaque <a href="glossaire.html#interaction-gestuelle">interaction gestuelle</a> est-elle décrite au moyen d'une aide&nbsp;?</h3>
+						<p>Chaque <a href="glossaire.html#interaction-gestuelle">interaction gestuelle</a> respecte-t-elle une de ces conditions&nbsp;?</p>
+						<ul>
+							<li>L'interaction gestuelle est décrite avant son déclenchement.</li>
+							<li>L'interaction gestuelle est décrite dans la documentation.</li>
+						</ul>
+					</article>
+
+					<article id="crit-12-5" data-level="A">
+						<h3 class="critere">Critère 12.5 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Chaque <a href="glossaire.html#interaction-gestuelle">interaction gestuelle</a> impliquant un changement d'orientation de l'écran (basculement, rotation, secouement&hellip;) a-t-elle une alternative (hors <a href="cas-particuliers.html#cp-12-5">cas particulier</a>)&nbsp;?</h3>
+						<p>Chaque <a href="glossaire.html#interaction-gestuelle">interaction gestuelle</a> impliquant un changement d'orientation de l'écran (basculement, rotation, secouement&hellip;) respecte-t-elle ces conditions&nbsp;?</p>
+						<ul>
+							<li>Une action gestuelle alternative utilise le tap (<span lang="en">touch</span> en anglais).</li>
+							<li>Une action alternative au clavier permettant d'accéder aux mêmes contenus et fonctionnalités est présente.</li>
+						</ul>
+					</article>
+
+					<article id="crit-12-6" data-level="A">
+						<h3 class="critere">Critère 12.6 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] L'accès au contenu ne doit pas dépendre d'une orientation de l'écran (portrait ou paysage), cette règle est-elle respectée&nbsp;?</h3>
+						<p>L'accès au contenu respecte-t-il une de ces conditions&nbsp;?</p>
+						<ul>
+							<li>Un paramètre permettant à l'utilisateur de choisir l'orientation de l'affichage du contenu, portrait ou paysage, est présent.</li>
+							<li>Le contenu est consultable dans les deux orientations, portrait et paysage.</li>
+						</ul>
+					</article>
+
+					<article id="crit-12-7" data-level="A">
+						<h3 class="critere">Critère 12.7 [<span aria-label="simple-A"><span aria-hidden="true">A</span></span>] Les <a href="glossaire.html#composants-adjacents">composants interactifs adjacents ne déclenchent pas la même action</a>. Cette règle est-elle respectée&nbsp;?</h3>
+					</article>
+
+				</section>
+			</main>
+			</section>
+		</div>
+	</div>
+
+	<footer id="footer" role="contentinfo" class="adapted">
+		<h2>Licence</h2>
+		<p><img width="69" height="93" class="sgmap-logo" src="img/modernisation-logo.jpg" alt="Secrétariat général pour la modernisation de l'action publique" /> Ce document est un document de l'État placé sous <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ultérieure</a>, comme tous les documents hébergés sur <a href="http://references.modernisation.gouv.fr">references.modernisation.gouv.fr</a>. Voir les conditions d'utilisation de la licence dans les <a href="http://references.modernisation.gouv.fr/mentions-legales">mentions légales</a>.</p>
+	<hr/>
+	<div class="legal-info">
+		<p>Réalisation SGMAP - 2017</p>
+	</div>
+	</footer>
+<script src="js/filtres.js"></script>
+</body>
+</html>

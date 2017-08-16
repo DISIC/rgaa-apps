@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Glossaire - RGAA-APPS</title>
+    <meta content="Glossaire - RGAA-APPS" name="description" />
+    <meta content="Glossaire -  RGAA-APPS Référentiel Général d'Accessibilité pour les Administrations, critères, tests" name="keywords" />
+    <meta content="0.1" name="version" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" media="all" href="css/rgaa.main.css" />
+    <link rel="shortcut icon" href="/sites/default/files/marianne_0.ico" type="image/vnd.microsoft.icon">
+  </head>
+  <body>
+ 		<div class="skiplinks">
+			<div class="inside">
+				<p>Accès direct&nbsp;:</p>
+				<ul>
+					<li><a href="#main">Contenu</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="rgaa-header">
+			<header role="banner" class="main-header">
+				<h1 class="slogan">Référentiel RGAA-Apps</h1>
+			</header>
+		</div>
+
+		<nav id="nav" role="navigation" aria-label="menu secondaire">
+				<ul>
+					<li><a href="index.html">Critères</a></li>
+					<li><span>Glossaire</span></li>
+					<li><a href="cas-particuliers.html">Cas particuliers</a></li>
+				</ul>
+			</nav>
+		<div id="wrapper">
+	<section aria-labelledby="main-title">
+	<main tabindex="-1" id="main" role="main">
+      <h1 id="main-title">Glossaire</h1>
+
+			<h2 id="a">A</h2>
+
+			<h3 id="accessible-aux-technologies">Accessible aux technologies d'assistance</h3>
+			<p>Pour qu'une information soit accessible aux technologies d'assistance, il faut qu'elle soit mise à disposition de ces dernières, au travers du logiciel lui-même ou par l'intermédiaire d'une API d'accessibilité, cette dernière méthode étant la plus répandue.</p>
+			<p>Cela ne signifie pas forcément que cette information, bien que disponible, sera forcément restituée par la technologie d'assistance, si cette dernière n'est pas en capacité de la récupérer.</p>
+			<p>Dans ce cas, le critère est réputé conforme car le problème vient de la technologie d'assistance elle-même.</p>
+
+			<h3 id="accessible-et-activable-clavier-souris">Accessible et activable au clavier et à la souris</h3>
+			<ul>
+			  <li>Un composant d'interface est accessible au clavier et à la souris lorsque l'utilisateur peut prendre, indifféremment, le focus avec le pointeur de la souris ou avec les touches du clavier (touche tabulation ou flèches de direction).</li>
+			  <li>Un composant d'interface est activable au clavier et à la souris lorsque l'utilisateur peut enclencher, indifféremment, l'action prévue par le composant d'interface par le clic de la souris ou la touche Entrée ou Espace du clavier.</li>
+			  <li><strong>Attention</strong>&nbsp;: pour certains composants d'interface complexe (systèmes d'onglets par exemple), il n'est pas possible de contrôler le composant avec la seule touche Entrée. Dans cette situation, d'autres touches (comme les touches de direction) peuvent être utilisées.</li>
+			</ul>
+			<p>Dans le référentiel, l'expression «&nbsp;contrôlable au clavier et à la souris&nbsp;» se rapporte également à la présente définition.</p>
+			<p><strong>Note importante&nbsp;:</strong> le recours à certaines technologies peut rendre la gestion du focus trop complexe ou trop instable pour ne reposer que sur la tabulation, les touches de direction et la touche Entrée.</p>
+			<p>Dans ce cas, la mise à disposition de raccourcis clavier peut être la seule solution pour rendre le composant utilisable.</p>
+			<p>Le critère peut être considéré comme conforme à la condition que les raccourcis clavier utilisés soient correctement documentés et qu'ils soient fonctionnels, quelle que soit la position du focus dans l'interface.</p>
+
+			<h3 id="accoles">Accolés (étiquette et champ accolés)</h3>
+			<p>Il faut que l'étiquette et son champ soient visuellement proches de manière à ce que la relation entre les deux ne puisse pas prêter à confusion.</p>
+
+			<h3 id="adjacent-identifiable">Adjacente clairement identifiable</h3>
+			<p>L'élément est mis à disposition de manière adjacente à l'objet identifié par le critère dans la représentation graphique et dans l'ordre de navigation au clavier. Si besoin, l'élément peut être disponible ailleurs dans le logiciel et être accessible avec une fonctionnalité (un bouton par exemple) adjacente à l'objet identifié dans le critère, explicite et clairement identifiable (l'intitulé de la fonctionnalité est explicite).</p>
+
+			<h3 id="alerte">Alerte</h3>
+			<p>Message d'alerte interrompant la navigation ou l'utilisation de l'interface, notamment en demandant de cliquer sur un bouton pour continuer la navigation ou l'utilisation du contenu. Par exemple, une boîte de dialogue. Par extension, une fenêtre modale qui nécessite d'être fermée pour continuer la navigation est considérée comme une alerte.</p>
+			<p><strong>Note&nbsp;:</strong> la désactivation des alertes concernées peut être proposée avant le déclenchement de l'alerte, par exemple, via un paramètre utilisateur ou lors de l'affichage de la première alerte, par exemple via une case à cocher «&nbsp;ne plus afficher cette alerte&nbsp;».</p>
+
+			<h3 id="alerte-sonore">Alerte sonore</h3>
+			<p>Une alerte sonore est généralement destinée à alerter l'utilisateur. Ce peut être pour alerter d'une nouveauté (arrivée d'un message par exemple), d'une erreur (erreur d'enregistrement), etc.</p>
+
+			<h3 id="alternative--script">Alternative (à un composant)</h3>
+			<p>Texte ou procédé associé au composant via une technique appropriée et permettant de mettre à disposition une fonction ou un contenu similaire à celui proposé par le composant.</p>
+			<p><strong>Note&nbsp;:</strong> lorsqu'une alternative à un procédé ou à une fonctionnalité est proposée, le moyen d'y accéder doit être fourni par l'application elle-même. Il peut s'agir d'un bouton permettant d'accéder à l'alternative dans un autre écran de l'application.</p>
+
+			<h3 id="alternative-courte-et-concise">Alternative courte et concise</h3>
+			<p>Les conditions de restitution d'une alternative textuelle par les technologies d'assistance (par exemple une loupe d'écran) nécessitent qu'elle soit la plus courte possible. Une longueur maximale de 80 caractères est fortement recommandée&nbsp;; elle limitera le nombre de manipulations nécessaires aux utilisateurs de plages Braille ou de loupes d'écran notamment pour lire l'alternative.</p>
+
+			<h3 id="alt-non-sonore">Alternative non sonore</h3>
+			<p>Les utilisateurs sourds ou malentendants ne peuvent accéder aux alertes si elles sont uniquement sonores. C'est généralement la plateforme qui met à disposition un moyen pour remplacer ces informations sonores par une indication non sonore (flash visuel par exemple). Tout logiciel qui dispose d'alertes sonores doit signaler à l'utilisateur qu'il peut modifier le mode de réception des messages d'alerte soit via les paramètres dédiés de la plateforme soit via un paramétrage propre au logiciel. Ce peut-être un bouton clignotant sur l'interface (indication visuelle), une boîte de dialogue indiquant la nature de l'alerte, une vibration d'un <span lang="en">joystick</span> ou d'un terminal mobile&hellip;</p>
+
+			<h3 id="alternative-textuelle-image">Alternative textuelle (élément graphique)</h3>
+			<p>Texte associé à un élément graphique via une technique appropriée et décrivant l'information véhiculée par l'élément graphique (par rapport au contexte du contenu dans lequel elle se trouve)&nbsp;:</p>
+			<ul>
+			  <li><strong>pour un élément graphique porteur d'information</strong>, l'alternative apporte l'information nécessaire à la compréhension du contenu auquel l'élément graphique est associé&nbsp;;</li>
+			  <li><strong>pour un élément graphique utilisé comme CAPTCHA ou un élément graphique test</strong>, l'alternative ne peut pas apporter l'information véhiculée par l'élément sans rendre la fonction associée inopérante. Dans ce cas de figure, l'alternative doit se contenter de permettre d'identifier la nature et la fonction de l'élément&nbsp;;</li>
+			  <li><strong>quant à un élément graphique de décoration</strong>, il devrait simplement être ignoré par les technologies d'assistance et ne pas avoir d'alternative.</li>
+			</ul>
+			<p><strong>Note</strong>&nbsp;: pour un élément graphique utilisé comme CAPTCHA, l'alternative peut être, par exemple&nbsp;: «&nbsp;Code de sécurité antispam&nbsp;» ou «&nbsp;code pour vérifier que vous êtes un humain&nbsp;» ou toute autre alternative permettant à l'utilisateur de comprendre la nature et la fonction de l'élément graphique.</p>
+
+			<h3 id="audiodescription-tendue">Audiodescription étendue</h3>
+			<p>Audiodescription ajoutée à une présentation audiovisuelle en mettant en pause la vidéo de manière à avoir le temps d'ajouter des descriptions supplémentaires.</p>
+			<p><strong>Note</strong>&nbsp;: cette technique est à utiliser seulement si le sens de la vidéo est perdu sans audiodescription supplémentaire et que les pauses entre les dialogues ou la narration sont trop courtes.</p>
+
+			<h3 id="audiodescription-synchronise-media-temporel">Audiodescription synchronisée (média temporel)</h3>
+			<p>Narration ajoutée (via un fichier son) à une piste sonore pour décrire les détails visuels importants qui ne peuvent être compris à partir de la piste sonore principale seulement. L'audiodescription doit être synchronisée avec le média temporel par un dispositif applicatif lié au lecteur.</p>
+			<p><strong>Note 1</strong>&nbsp;: l'audiodescription d'une vidéo fournit de l'information à propos des actions, des personnages, des changements de scènes, du texte apparaissant à l'écran et d'autres contenus visuels.</p>
+		  <p><strong>Note 2</strong>&nbsp;: dans une audiodescription standard, la narration est ajoutée durant les pauses qui existent dans le dialogue. (Voir aussi audiodescription étendue.)</p>
+		  <p><strong>Note 3</strong>&nbsp;: lorsque toute l'information de la vidéo est déjà donnée dans la piste audio, aucune audiodescription supplémentaire n'est requise.</p>
+
+			<h3 id="augmenter-taille-police">Augmenter la taille de police de 200% au moins</h3>
+			<p>Certaines plateformes permettent à l'utilisateur de définir une taille de police personnalisée pour l'ensemble des éléments textuels des interfaces graphiques des applications. Dans ce cas, il faut vérifier que les paramètres définis par l'utilisateur pour la plateforme s'appliquent bien au logiciel pour tous les éléments.</p>
+			<p>Pour d'autres plateformes, il n'existe pas de paramètre global pour modifier la taille de la police. Dans ce cas, il faut vérifier dans les préférences de l'application qu'un tel paramètre existe et qu'il s'applique à tous les éléments textuels.</p>
+
+			<h2 id="b">B</h2>
+
+			<h3 id="bloc-dinformations-de-mme-nature">Bloc d'informations de même nature</h3>
+			<p>Dans un formulaire, ensemble des champs pouvant être regroupés par la nature des informations attendues. Le regroupement vise à identifier les champs devant être traités comme un ensemble.</p>
+			<p>Quelques exemples&nbsp;:</p>
+			<ul>
+				<li>Trois champs successifs pour saisir une date (jour/mois/année).</li>
+				<li>Champs successifs pour un numéro de téléphone.</li>
+				<li>Un bloc destiné à saisir l'identité et l'adresse de l'utilisateur, lorsque le formulaire contient plusieurs blocs de contact.</li>
+				<li>Un ensemble de boutons radio ou de cases à cocher qui se rapportent à une question.</li>
+			</ul>
+			<p>Si la technologie permet de créer des regroupements de champs, alors la légende du regroupement de champs devrait être restituée par les technologies d'assistance pour chaque champ contenu dans ce regroupement.</p>
+			<p>Ces champs doivent être regroupés lorsque les intitulés de label ne sont pas suffisants pour informer l'utilisateur que les champs font partie d'un regroupement.</p>
+			<p><strong>Note&nbsp;:</strong> Lorsque le formulaire est constitué d'un seul bloc d'informations de même nature (l'identité et l'adresse de l'utilisateur, par exemple) ou d'un champ unique (un moteur de recherche, par exemple), le regroupement des champs n'est pas obligatoire.</p>
+
+			<h3 id="bouton-formulaire">Bouton (formulaire)</h3>
+			<p>Élément d'un formulaire qui permet d'effectuer une action prédéfinie. Par exemple, le bouton de soumission d'un formulaire permet l'envoi des informations collectées pour leur traitement. L'intitulé d'un bouton doit décrire l'action qui résulte de son activation (par exemple&nbsp;: «&nbsp;Enregistrer les données&nbsp;», «&nbsp;Effacer les informations&nbsp;»).</p>
+
+			<h2 id="c">C</h2>
+
+			<h3 id="captcha">CAPTCHA</h3>
+			<p>Un CAPTCHA est un test utilisé pour distinguer un utilisateur humain d'un ordinateur. Le test utilise souvent des éléments graphiques contenant du texte déformé, mélangé avec d'autres formes ou utilisant des jeux de couleurs altérées, que l'utilisateur est invité à retaper. D'autres formes de CAPTCHA peuvent être basées sur des questions logiques ou des extraits sonores.</p>
+
+			<h3 id="champ-de-saisie-de-formulaire">Champ de saisie de formulaire</h3>
+			<p>Objet d'un formulaire permettant à l'utilisateur&nbsp;:</p>
+			<ul>
+			  <li>de saisir des données textuelles ou préformatées (texte, mot de passe, chiffre,adresse mail&hellip;)&nbsp;;</li>
+			  <li>de sélectionner des valeurs prédéfinies (case à cocher, bouton radio&hellip;)&nbsp;;</li>
+			  <li>de télécharger des fichiers&nbsp;;</li>
+			  <li>d'afficher des résultats (barre de progression par exemple).</li>
+			</ul>
+
+			<h3 id="changements-brusques-de-luminosite">Changement brusque de luminosité ou effet de flash</h3>
+			<p>Alternance de luminosité relative qui peut causer des crises chez certaines personnes si leur taille est suffisamment importante dans une gamme de fréquences spécifiques.</p>
+
+			<h3 id="changement-agent-utilisateur">Changement d'agent utilisateur</h3>
+			<p>Un agent utilisateur est un dispositif permettant d'afficher et d'éditer du contenu. Il y a changement d'agent utilisateur lorsqu'un contenu est accédé ou édité par une technologie ou un logiciel différent de celui actuellement utilisé.</p>
+			<p>Par exemple, une interface permettant de gérer des archives propose de visualiser les contenus en utilisant des visionneuses spécifiques au format des contenus (PDF, docx, etc.). Ces différents agents utilisateurs proposant des fonctionnalités d'accessibilité optimisées pour les formats pris en charge, le comportement de la technologie d'assistance peut être très différent. Un autre exemple pourrait être l'ouverture d'un lien accessible depuis une application, dans un navigateur web. Il est donc important que l'utilisateur soit prévenu de ce changement.</p>
+
+			<h3 id="changement-de-contexte">Changement de contexte</h3>
+			<p>Changements majeurs dans le contenu d'un écran qui, s'ils sont faits sans que l'utilisateur en soit conscient, peuvent désorienter l'utilisateur qui ne peut voir l'ensemble de la page en même temps. Les changements de contexte comprennent les changements&nbsp;:</p>
+			<ol>
+			  <li>d'agent utilisateur&nbsp;;</li>
+			  <li>d'espace de restitution&nbsp;;</li>
+			  <li>de focus&nbsp;;</li>
+			  <li>de contenu qui modifie la signification de l'écran.</li>
+			</ol>
+			<p><strong>Note</strong>&nbsp;: Un changement de contenu n'est pas toujours un changement de contexte. Un changement dans le contenu comme le déploiement d'une arborescence, un menu dynamique ou un déplacement de tabulation ne change pas nécessairement le contexte à moins qu'il ne change aussi l'un des éléments énumérés ci-dessus (le focus, par exemple).</p>
+			<p><strong>Exemple</strong>&nbsp;: l'ouverture dans un autre agent utilisateur, le déplacement du focus sur un composant différent ou la réorganisation significative du contenu de l'écran sont autant d'exemples d'un changement de contexte.</p>
+
+			<h3 id="changement-de-langue">Changement de langue</h3>
+			<p>L'indication des changements de langue est nécessaire pour indiquer aux technologies d'assistance de modifier la restitution vocale d'un élément. Les changements de langue concernent tous les contenus.</p>
+
+			<h3 id="compatible-avec-les-technologies-dassistance">Compatible avec les technologies d'assistance</h3>
+			<p>Un contenu ou une fonctionnalité doit être compatible avec les technologies d'assistance des utilisateurs ainsi qu'avec les fonctions d'accessibilité des logiciels via une API d'accessibilité.</p>
+			<p>Cela concerne, à la fois, la technologie, ses fonctionnalités et ses usages&nbsp;:</p>
+			<ul>
+				<li>La façon dont la technologie est utilisée doit être compatible avec les technologies d'assistance des utilisateurs. Cela signifie que la façon dont la technologie est utilisée a été testée dans une perspective d'interopérabilité avec des utilisateurs des technologies d'assistance dans les contenus du logiciel.</li>
+				<li>La technologie fonctionne de façon native sur la plateforme et utilise l'API d'accessibilité de la plateforme.</li>
+			</ul>
+			<p>La vérification de la compatibilité avec les technologies d'assistance nécessite de réaliser un certain nombre de tests spécifiques à la technologie utilisée, par exemple&nbsp;:</p>
+			<ul>
+				<li>Vérifier le nom, le rôle, le paramétrage et les changements d'état des composants d'interface.</li>
+				<li>Vérifier que la restitution d'un composant est correcte pour la ou les technologies d'assistance utilisées.</li>
+			</ul>
+
+			<h3 id="composant-interface">Composant d'interface</h3>
+			<p>Un composant d'interface est un élément avec lequel l'utilisateur peut interagir, par exemple un bouton, une zone de saisie. Certains composants peuvent être plus complexes, ce sont généralement des combinaisons de composants d'interfaces, comme un menu, une fenêtre de dialogue, un système d'onglets, un système de fichiers (<span lang="en">tree view</span>).</p>
+			<h3 id="cpt-nature-pas-evidente">Composant dont la nature n'est pas évidente</h3>
+			<p>Composant interactif mêlé à des éléments non interactifs (du texte par exemple) et qui n'est pas différenciable visuellement des éléments non interactifs.</p>
+
+			<h3 id="composants-adjacents">Composants interactifs adjacents</h3>
+			<p>Composants interactifs (tels que des boutons) à proximité les uns des autres dans l'ordre de tabulation. Par exemple, un bouton image permet de déclencher l'action A. Juste après dans l'ordre de tabulation, un bouton texte permet de déclencher la même action A. Ces deux éléments doivent être regroupés en un seul élément (le texte et l'image dans le même bouton), ceci afin de réduire le nombre de balayages nécessaires, notamment aux utilisateurs de lecteurs d'écran, pour parcourir un écran d'application.</p>
+
+			<h3 id="conteneurs">Conteneurs</h3>
+			<p>Groupe d'éléments d'une interface. Pour faciliter la navigation dans les écrans, les technologies permettent de réaliser des regroupements de composants dans des conteneurs indépendants. De cette manière, les technologies d'assistance, via des commandes dédiées, permettent aux utilisateurs de se déplacer plus rapidement entre ces conteneurs.</p>
+			<p>Au minimum, il est important de trouver un conteneur pour chacune des barres d'outils et le contenu principal.</p>
+			<p>Quand ces composants existent, ils peuvent avoir des dénominations différentes, par exemple&nbsp;: conteneur, objet, groupe&hellip;</p>
+
+			<h3 id="contraste">Contraste</h3>
+			<p>Opposition marquée entre la luminosité d'une couleur de premier plan et d'une couleur d'arrière-plan. Le rapport de contraste est basé sur la différence de luminosité relative entre l'arrière-plan et le premier plan selon la règle&nbsp;: (L1 + 0,05) / (L2 + 0,05) où L1 est la luminosité relative la plus claire et L2 la luminosité relative la plus sombre. La luminosité est calculée selon la formule suivante&nbsp;: L = 0,2126 * R + 0,7152 * G + 0,0722 * B. Où R, G et B sont définis par&nbsp;:</p>
+			<ul>
+			  <li>Si R<sub>sRGB</sub> &lt;= 0,03928 alors R = R<sub>sRGB</sub>/12,92 sinon R = ((R<sub>sRGB</sub>+0,055)/1,055) ^ 2,4&nbsp;;</li>
+			  <li>Si G<sub>sRGB</sub> &lt;= 0,03928 alors G = G<sub>sRGB</sub>/12,92 sinon G = ((G<sub>sRGB</sub>+0,055)/1,055) ^ 2,4&nbsp;;</li>
+			  <li>Si B<sub>sRGB</sub> &lt;= 0,03928 alors B = B<sub>sRGB</sub>/12.92 sinon B = ((B<sub>sRGB</sub>+0,055)/1,055) ^ 2,4&nbsp;;</li>
+			</ul>
+			<p>et R<sub>sRGB</sub>, G<sub>sRGB</sub> et B<sub>sRGB</sub> sont définis par&nbsp;:</p>
+			<ul>
+			  <li>R<sub>sRGB</sub> = R8bit/255&nbsp;;</li>
+			  <li>G<sub>sRGB</sub> = G8bit/255&nbsp;;</li>
+			  <li>B<sub>sRGB</sub> = B8bit/255.</li>
+			</ul>
+			<p>Le caractère «&nbsp;^&nbsp;» est l'opérateur exponentiel.</p>
+			<p><strong>Note</strong>&nbsp;: la mesure de contraste concerne le texte, le texte en image, le texte et le texte en image dans les animations, le texte de sous-titrage et le texte incrusté dans les vidéos. Pour le texte et le texte en image dans les animations, le texte de sous-titrage et le texte incrusté dans les vidéos, la taille de la police doit être mesurée par rapport à la taille d'affichage par défaut (telle qu'affichée). Les textes présents dans les éléments d'une image ou d'une vidéo (par exemple un écriteau, une affiche etc.) ne sont pas concernés.</p>
+			<p>Source&nbsp;: <a hreflang="en" href="http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-procedure">Procédure de calcul de contraste des WCAG (en anglais)</a>.</p>
+
+			<h3 id="controle-mouvement">Contrôle (contenu en mouvement ou clignotant)</h3>
+			<p>Possibilité pour l'utilisateur de contrôler l'affichage ou la lecture d'un contenu en mouvement ou clignotant par le clavier et la souris, au moins.</p>
+			<p>Tous les contenus en mouvement, à l'exception des médias temporels pris en charge par la thématique Multimédia, sont concernés&nbsp;: les éléments graphiques animés, les contenus en mouvement par exemple.</p>
+			<p><strong>Note 1&nbsp;:</strong> lorsque c'est approprié, la méthode de contrôle devrait être disponible comme premier élément de l'interface.</p>
+			<p><strong>Note 2&nbsp;:</strong> la méthode de contrôle du contenu en mouvement ou clignotant doit permettre à l'utilisateur d'interagir avec le reste de la page. En conséquence, l'arrêt ou la mise en pause via un événement déclenché uniquement sur la prise de focus ne permet pas de valider le critère.</p>
+			<p><strong>Note 3&nbsp;:</strong> Dans certains cas, le mouvement fait partie intégrante du composant et il n'est pas possible d'en donner le contrôle à l'utilisateur, par exemple une barre de progression dont la fonction est d'indiquer par un mouvement la progression d'un événement comme un téléchargement. Dans ce cas, le critère est non applicable.</p>
+
+			<h3 id="controle-son">Contrôle (son déclenché automatiquement)</h3>
+			<p>Possibilité pour l'utilisateur d'arrêter ou de relancer un son déclenché automatiquement.</p>
+			<p><strong>Note&nbsp;:</strong> la méthode de contrôle du son devrait être disponible comme premier élément de l'interface.</p>
+
+			<h3 id="contrle-de-la-consultation-dun-media-temporel">Contrôle de la consultation (d'un média temporel)</h3>
+			<p>Possibilité pour l'utilisateur de contrôler la consultation d'un média temporel par le clavier et la souris, au moins. Les points suivants doivent être respectés&nbsp;:</p>
+				<ul>
+					<li>Liste des fonctionnalités obligatoires de contrôle de la consultation&nbsp;:
+						<ul>
+						  <li>L'objet multimédia doit toujours avoir les fonctionnalités suivantes, au minimum&nbsp;: lecture, pause ou stop.</li>
+						  <li>Si l'objet multimédia a du son, il doit avoir une fonctionnalité de contrôle du volume.</li>
+						  <li>Si l'objet multimédia a des sous-titres, il doit avoir une fonctionnalité de contrôle de l'apparition/disparition des sous-titres.</li>
+						  <li>Si l'objet multimédia a une audiodescription, il doit avoir une fonctionnalité de contrôle de l'apparition/disparition de l'audiodescription.</li>
+						</ul>
+					</li>
+					<li>Chaque fonctionnalité doit être accessible au clavier et à la souris.</li>
+					<li>Chaque fonctionnalité doit être activable au clavier et à la souris, au moins.</li>
+				</ul>
+				<p><strong>Note</strong>&nbsp;: s'il n'y a pas de son à un média temporel, il n'est pas utile de mettre une fonctionnalité de contrôle du volume. Si cette fonctionnalité est cependant présente et qu'elle nécessite une alternative textuelle pour être comprise par certains utilisateurs (exemple&nbsp; bouton «&nbsp;volume&nbsp;» dans une vidéo en Flash), il faut alors lui en donner une puisque l'utilisateur est susceptible d'y accéder et de vouloir l'activer.</p>
+
+			<h3 id="contrle-de-saisie-formulaire">Contrôle de saisie (formulaire)</h3>
+			<p>Ensemble des processus qui permettent de prévenir l'utilisateur des champs obligatoires, des indications de type ou de format attendus et des erreurs de saisie dans un formulaire. Ces contrôles de saisie peuvent être implémentés par l'auteur des contenus ou s'appuyer sur des attributs propres à la technologie qui produisent de manière automatique des indications de saisie ou d'erreurs.</p>
+
+			<h3 id="controles-natifs">Contrôles natifs de la plateforme</h3>
+			<p>Les plateformes disposent de contrôles natifs par exemple un <span lang="en">color picker</span> natif pour la sélection de couleur, un calendrier ou un champ spécifique contenant le contrôle du format pour la sélection de dates, etc. Les champs de formulaires qui attendent des formats particuliers (comme une date par exemple) devraient utiliser les contrôles natifs de la plateforme pour assurer un maximum de compatibilité avec les technologies d'assistance.</p>
+			
+		<h3 id="correctement-restitue-par-les-technologies-dassistance">Correctement restitué (par les technologies d'assistance)</h3>
+			<p>Lorsqu'un critère, un test ou une condition de test demande de vérifier la restitution d'un dispositif, il faut s'assurer que ladite restitution est compatible avec l'accessibilité.</p>
+
+			<h2 id="d">D</h2>
+			
+			<h3 id="description-dtaille-elt-graphique">Description détaillée (élément graphique)</h3>
+			<p>Contenu associé à un <a href="#elt-graphique">élément graphique</a> en complément de son alternative textuelle afin de décrire en totalité l'information véhiculée par l'élément.</p>
+
+			<h2 id="e">E</h2>
+
+			<h3 id="elt-graphique">Élément graphique</h3>
+			<p>Image réelle, par exemple une image JPEG, BMP ou PNG, vectorielle (par exemple une image SVG) ou tout autre objet graphique qui apparaîtrait comme une «&nbsp;image&nbsp;» pour l'utilisateur.</p>
+
+						<h3 id="elt-graphique-deco">Élément graphique de décoration</h3>
+			<p>Élément graphique n'ayant aucune fonction et ne véhiculant aucune information particulière par rapport au contenu auquel il est associé. Exemples&nbsp;:</p>
+			<ul>
+			  <li>Un élément graphique servant à caler la mise en page&nbsp;;</li>
+			  <li>Un élément graphique présent à côté d'un intitulé de bouton servant juste d'agrément graphique&nbsp;;</li>
+			  <li>Un élément graphique n'apportant aucune information nécessaire à la compréhension du texte auquel il est associé.</li>
+			</ul>
+
+			<h3 id="elt-graphique-test">Élément graphique de test</h3>
+			<p><a href="#elt-graphique">Élément graphique</a> servant dans un test, un CAPTCHA ou un élément graphique servant de test dans un quiz ou un jeu. Exemple&nbsp;: une série d'images présente un détail issu de tableaux célèbres, il faut reconnaître le titre et le peintre de chaque tableau. Dans cette situation, il n'est pas possible de donner une alternative pertinente (par exemple le nom du tableau et/ou du peintre) sans rendre le test inutilisable. L'alternative doit alors se contenter de donner la possibilité d'identifier l'image, par exemple «&nbsp;image 1 du test&nbsp;».</p>
+
+			<h3 id="elt-graphique-texte">Élément graphique texte</h3>
+			<p><a href="#elt-graphique">Élément graphique</a> affichant du texte.</p>
+			<p><strong>Note&nbsp;:</strong> il n'est pas recommandé d'utiliser des éléments graphiques contenant du texte. Lorsqu'il est possible de reproduire les mêmes effets avec la technologie dans laquelle est développée l'interface, le <a href="index.html#crit-1-8">critère 1.8 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>]</a> et le <a href="index.html#crit-1-9">critère 1.9 [<span aria-label="double-A"><span aria-hidden="true">AA</span></span>]</a> imposent que le texte soit reproduit dans ce format ou qu'un mécanisme de remplacement permette à l'utilisateur de remplacer ces éléments graphiques par du texte stylé.</p>
+
+			<h3 id="elt-graphique-porteur-dinformation">Élément graphique porteur d'information</h3>
+			<p><a href="#elt-graphique">Élément graphique</a> qui véhicule une information nécessaire à la compréhension du contenu auquel il est associé.</p>
+
+			<h3 id="ensemble-d-ecrans">Ensemble d'écrans</h3>
+			<p>Écrans d'une application liés les uns aux autres par une fonctionnalité (bouton, barre de navigation) et constituant un ensemble cohérent à l'intérieur d'une application. Par exemple, les étapes d'un processus de paiement électronique, les écrans d'une rubrique spécifique, les écrans d'administration d'un compte sont autant d'ensembles d'écrans.</p>
+
+			<h3 id="entte-de-colonne-ou-de-ligne">En-tête de colonne ou de ligne</h3>
+			<p>Contenu d'une cellule dans un tableau de données (la première cellule d'une colonne ou d'une ligne, généralement) qui sert d'intitulé pour la totalité ou une partie des cellules de la colonne ou de la ligne. Une colonne ou une ligne peut contenir plusieurs en-têtes (en-tête intermédiaire).</p>
+
+			<h3 id="environnement-matris">Environnement maîtrisé</h3>
+			<p>Tout environnement dans lequel l'accès à l'information, les technologies, les conditions d'utilisation et le profil des utilisateurs peuvent être connus et maîtrisés. Les principaux éléments dont la maîtrise est essentielle sont&nbsp;:</p>
+			<ul>
+				<li>Les technologies d'assistance et tout dispositif utilisé de manière spécifique par les utilisateurs handicapés&nbsp;;</li>
+				<li>Les systèmes d'exploitation et les API d'accessibilité supportées&nbsp;;</li>
+				<li>La formation des utilisateurs de technologies d'assistance à l'utilisation de tout dispositif particulier (interface, application en ligne&hellip;).</li>
+		</ul>
+			<p>Les auteurs et les administrateurs doivent garantir la compatibilité des technologies utilisées et de leurs usages par les utilisateurs et leurs technologies (y compris les technologies d'assistance). Les services d'information et les applications, quel que soit leur statut, qui offrent un accès public ne peuvent pas être considérés comme des environnements maîtrisés.</p>
+
+		<h3 id="tiquette-de-champs-de-formulaire">Étiquette de champ de formulaire</h3>
+		<p>Texte à proximité du champ de formulaire permettant de connaître la nature, le type ou le format des informations attendues.</p>
+		<p>Selon la capacité de la technologie ou l'implémentation utilisée par le développeur, le texte visible accolé au champ de formulaire n'est pas l'étiquette restituée par les technologies d'assistance lorsque le focus est sur le champ de formulaire. Dans ces cas, il faut donc s'assurer que lorsque le focus est pris sur le champ de formulaire, une étiquette est restituée par les technologies d'assistance et que les étiquettes sont similaires (elles apportent la même information).</p>
+
+		<h3 id="tiquettes-cohrentes">Étiquettes cohérentes</h3>
+		<p>Les étiquettes de champs de formulaire présentes dans un écran ou dans un ensemble d'écrans et réclamant la saisie d'une même information doivent être formulées sans ambiguïté pour que l'utilisateur sache que l'information qu'il doit communiquer est la même.</p>
+
+
+			<h2 id="f">F</h2>
+
+			<h3 id="fonctionnalite-premier-niveau">Fonctionnalité de premier niveau</h3>
+			<p>Les fonctionnalités de premier niveau sont les fonctionnalités accessibles sans avoir à ouvrir ou parcourir une fenêtre annexe de l'écran ou le menu principal de l'application. Ce sont les fonctionnalités toujours présentes dans l'interface du logiciel, généralement dans le bandeau principal en haut des applications. Par exemple, dans un logiciel d'édition de texte, la fonctionnalité «&nbsp;sauvegarder&nbsp;» est une fonctionnalité de premier niveau car elle est disponible à partir d'un bouton dans la barre d'outils toujours visible. Cette fonctionnalité peut généralement être activée de 3 façons&nbsp;: via le bouton présent dans la barre d'outil toujours visible, via le menu «&nbsp;Fichier&nbsp;» et via le raccourci clavier <kbd>Ctrl + S</kbd>.</p>
+
+			<h2 id="i">I</h2>
+
+			<h3 id="ignore-ta">Ignoré par les technologies d'assistance</h3>
+			<p>La restitution d'éléments graphiques comme des images qui n'apportent pas d'information pertinente peut créer des conditions de consultation complexes en surchargeant la restitution vocale d'information inutile.</p>
+			<p>Il est donc important de pouvoir empêcher la restitution de ces éléments. La plupart des API d'accessibilité possèdent des propriétés ou des méthodes permettant d'empêcher la restitution de ce type d'élément, par exemple l'API ARIA propose la propriété <code>aria-hidden</code> dédiée à cet usage.</p>
+			<p>Lorsque le langage ou la technologie employé(e) ne possède pas de propriété ad&nbsp;hoc, le fait de s'assurer que l'élément graphique n'est pas restitué est une solution de compromis acceptable.</p>
+
+			<h3 id="indication-forme-taille-position">Indication donnée par la forme, la taille ou la position</h3>
+			<p>Il peut s'agir, par exemple&nbsp;:</p>
+			<ul>
+			  <li>de la présence d'un marqueur visuel, pour indiquer la page active dans un menu de navigation (indication donnée par la position)&nbsp;;</li>
+			  <li>d'une mise en avant-plan pour indiquer un onglet actif (indication donnée par la forme)&nbsp;;</li>
+			  <li>d'une modification de la taille de police dans un nuage de tags (indication donnée par la taille).</li>
+			</ul>
+			<p>Ou tout autre effet graphique similaire.</p>
+
+			<h3 id="information-donne-par-la-couleur">Information (donnée par la couleur)</h3>
+			<p>Information transmise visuellement par l'intermédiaire d'une couleur. L'indication que les champs en rouge sont obligatoires dans un formulaire, le changement de couleur d'un nom d'article pour indiquer son indisponibilité dans une liste d'articles sont autant d'exemples d'indication donnée par la couleur.</p>
+			<p>L'indication donnée uniquement par la couleur doit être accompagnée d'une autre méthode à destination des utilisateurs qui ne voient pas ou perçoivent mal les couleurs ou leurs associations.</p>
+			<p>L'autre moyen de récupérer une information par la couleur peut être très divers, lorsqu'il s'agit d'un moyen faisant intervenir du graphisme (une image par exemple). L'indication visuelle pourrait devoir être accompagnée d'une indication textuelle. Par exemple, un effet de bordure, de gras, de changement typographique ou autre dispositif similaire sera jugé insuffisant car ces indications ne seront pas accessibles aux personnes aveugles.</p>
+
+			<h3 id="interaction-gestuelle">Interaction gestuelle</h3>
+			<p>Toute interaction effectuée au moyen de gestes déclenchant une action, notamment via une surface tactile. Par exemple, les interactions de type tap (touché rapide équivalent d'un clic à la souris), touché (<span lang="en">touch</span> en anglais, touché plus long qu'un tap), balayage (<span lang="en">swipe</span>) ou pincement (<span lang="en">pinch</span>) sont des interactions gestuelles.</p>
+
+			<h3 id="interaction-gestuelle-complexe">Interaction gestuelle complexe</h3>
+			<p>Les interactions gestuelles complexes impliquent plusieurs mouvements successifs ou synchronisés. Par exemple, un balayage suivi de plusieurs taps. Ces interactions peuvent présenter des difficultés insurmontables pour certains utilisateurs.</p>
+			<p>Note&nbsp;: Le terme «&nbsp;synchronisé&nbsp;» comprend à la fois les gestes simultanés et les gestes enchaînés sans pause.</p>
+
+			<h2 id="j">J</h2>
+
+			<h3 id="taille-caracteres-contraste">Jusqu'à ou à partir de 150% de la taille de police par défaut sans effet de graisse. Jusqu'à ou à partir de 120% de la taille de police par défaut en gras</h3>
+			<p>Ces deux mesures déterminent la taille relative des caractères correspondant à une taille de caractères équivalent à 14 points gras ou 18 points sans effet de graisse en considérant que la police de corps est à 100%.</p>
+			<p><strong>Note&nbsp;:</strong> jusqu'à 150% et jusqu'à 120% signifie que la taille des caractères est strictement inférieure à 150 ou 120%. &Agrave; partir de 150% et à partir de 120% signifie que la taille des caractères est égale ou supérieure à 150 ou 120%.</p>
+			<p>La taille de police par défaut est la taille définie par l'auteur pour le document ou, en son absence, la taille par défaut utilisée par l'agent utilisateur.</p>
+
+
+			<h2 id="l">L</h2>
+
+			<h3 id="le-nom-le-rle-la-valeur-le-paramtrage-et-les-changements-dtats">Le nom, le rôle, la valeur, le paramétrage et les changements d'état</h3>
+			<p>Un composant doit avoir un rôle et un nom appropriés, ses valeurs, états et paramètres éventuels doivent également être accessibles et correctement transmis aux API d'accessibilité.</p>
+			<p>Le nom peut être l'intitulé du composant comme l'intitulé d'un bouton par exemple.</p>
+			<p>La valeur est, par exemple, l'élément sélectionné d'une liste déroulante ou la valeur actuelle d'un curseur.</p>
+			<p>Le rôle correspond au type d'élément défini dans la spécification de la technologie employée. Le rôle (bouton, champ de saisie par exemple) est généralement restitué par les technologies d'assistance.</p>
+			<p>Le paramétrage correspond aux informations particulières d'un composant. Par exemple un paramètre qui transmet aux API l'information que le composant contrôle tel ou tel contenu.</p>
+			<p>Les changements d'état doivent également être mis à disposition. Par exemple, l'utilisation d'une propriété permettant de signaler aux API que le composant est «&nbsp;ouvert&nbsp;» ou «&nbsp;fermé&nbsp;». <strong>Note</strong>&nbsp;: un état peut également être transmis via le nom, lorsque l'intitulé est changé dynamiquement pour correspondre à l'état de la zone contrôlée notamment.</p>
+			<p>Ces paramètres ne sont pas obligatoires, mais peuvent être requis s'ils sont indispensables pour rendre le composant accessible. C'est à l'auditeur de considérer les cas où ces paramètres sont indispensables en fonction du contexte lié à l'utilisation du composant.</p>
+			<p>L'auditeur doit également vérifier que, lorsqu'il sont présents, ces paramètres sont correctement utilisés.</p>
+
+			<h3 id="liste-de-choix">Liste de choix</h3>
+			<p>Champ de formulaire affichant une série d'items à sélectionner sous forme d'une liste déroulante.</p>
+
+			<h3 id="listes">Listes</h3>
+			<p>Suite d'éléments pouvant être regroupés sous la forme d'une liste structurée ordonnée, non ordonnée ou de définition. Par exemple la suite de liens d'un menu de navigation est une liste de liens non ordonnée, les différentes étapes d'une procédure forment une liste d'éléments ordonnés, le couple terme/définition d'un glossaire est une liste de définition.</p>
+
+			<h2 id="m">M</h2>
+
+			<h3 id="marge-suffisante">Marge extérieure suffisante</h3>
+			<p>Lorsque des contrôles, comme des boutons ou des textes activables, sont adjacents, il peut être difficile pour un utilisateur de les activer individuellement si leur taille n'est pas suffisante, notamment lorsque cette taille est proche du minimum requis (9mm x 9mm).</p>
+			<p>L'implémentation d'une marge permet de diminuer les erreurs d'activation d'éléments adjacents. Il n'y a pas de valeur fixe à cette marge car elle peut dépendre de la résolution et de la taille physique de l'écran.</p>
+			<p>Elle doit être suffisante néanmoins pour permettre, quelles que soient la résolution et la taille physique de l'écran, d'activer sans erreur chaque composant interactif.</p>
+			<p>À titre indicatif, voici quelques références de recommandation de marge&nbsp;:</p>
+			<ul>
+				<li>Les <a href="http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/spacing" hreflang="en" lang="en">BBC Mobile Accessibility Guidelines</a> recommandent une marge de 1 pixel, au moins.</li>
+				<li><a href="https://www.google.com/design/spec/usability/accessibility.html#">Google</a> recommande une marge de 8 dp.</li>
+			</ul>
+
+			<h3 id="mcanisme-de-remplacement">Mécanisme de remplacement</h3>
+			<p>Mécanisme permettant à l'utilisateur de remplacer du texte par du texte en image et inversement sur le principe du <span lang="en">style switcher</span>.</p>
+
+				<h3 id="mcanisme-contraste">Mécanisme qui permet d'afficher le texte avec un rapport de contraste conforme</h3>
+					<p>Si le mécanisme est géré par un bouton dont l'intitulé visible est constitué par un texte seul visible, alors le rapport de contraste de l'élément est à tester avec les tests 2.3.1, 2.3.2, 2.3.3, 2.3.4, 2.4.1, 2.4.2, 2.4.3 ou 2.4.5, selon le niveau exigé et le cas d'application.</p>
+					<p>Pour toutes les autres implémentations, les tests 2.3.5 et 2.4.5 s'appliquent (selon, le niveau AA ou AAA, exigé).</p>
+
+			<h3 id="mdia-temporel-type-son-vido-et-synchronis">Média temporel (type son, vidéo et synchronisé)</h3>
+			<ul>
+			  <li>Média temporel seulement audio&nbsp;: contenu sonore (<span lang="en">wave</span>, MP3&hellip;).</li>
+			  <li>Média temporel seulement vidéo&nbsp;: images ou photos en mouvement ou en séquence.</li>
+			  <li>Média temporel synchronisé&nbsp;: flux audio ou vidéo synchronisé avec un autre format pour présenter de l'information et/ou comportant des composants temporels interactifs. Un média temporel peut être consulté de 2 manières différentes&nbsp;:
+			    <ul>
+			      <li>fichier à télécharger consultable avec un logiciel externe&nbsp;;</li>
+			      <li>contenu embarqué dans le logiciel et consultable depuis l'interface.</li>
+			    </ul>
+			  </li>
+			</ul>
+			<p>Un média temporel peut être diffusé en temps réel ou être proposé en lecture de manière asynchrone (média pré-enregistré).</p>
+
+			<h2 id="o">O</h2>
+
+
+			<h3 id="ordre-de-tabulation">Ordre de tabulation</h3>
+			<p>Ordre dans lequel le focus se déplace (vers un élément suivant ou vers un élément précédent). L'ordre naturel est celui qui est implémenté dans le code source.</p>
+				<p><strong>Attention</strong>&nbsp;: lorsqu'un élément initie un changement dans l'écran (changement de contexte, gestion de zones cachées, ajout de contenu, gestion de champs de formulaire&hellip;), il est nécessaire d'activer l'élément qui initie le changement pour tester la cohérence de l'ordre de tabulation.</p>
+
+			<h3 id="ordre-de-restitution">Ordre de restitution cohérent</h3>
+			<p>L'ordre de restitution est cohérent si tout le contenu visible est restitué, si l'ordre de restitution est logique et si l'enchaînement de la lecture est cohérent. À noter qu'un ordre de restitution qui ne se ferait pas de gauche à droite n'est pas à considérer comme étant un ordre non cohérent.</p>
+
+			<h2 id="p">P</h2>
+
+			<h3 id="parametres-couleur">Paramètres de couleurs définis par l'utilisateur pour la plateforme</h3>
+			<p>Certaines plateformes permettent à l'utilisateur de définir des paramètres de colorisation (niveau de contrastes, couleur de police, luminosité&hellip;) personnalisés pour l'ensemble des éléments des interfaces graphiques des applications. Quand la plateforme dispose de tels paramétrages, alors les applications doivent permettre que ces paramètres s'appliquent sur tous les composants.</p>
+
+			<h3 id="passage-avant-champ">Passage de texte avant le champ de formulaire</h3>
+			<p>Il est compliqué de déterminer à l'aide des inspecteurs d'interface si un passage de texte est situé avant un champ de formulaire dans une interface logicielle. Afin de contrôler que le passage de texte qui fait office d'aide à la saisie ou de contrôle de saisie, est bien situé avant le champ de formulaire concerné, il est nécessaire de procéder à un test de restitution par un lecteur d'écran.</p>
+
+			<h3 id="pertinence-information-autrement-que-par-la-couleur">Pertinence (information autrement que par la couleur)</h3>
+			<p>Le moyen pour récupérer une information autrement que par la couleur doit être accessible à tous. Une alternative pertinente à  l'information par la couleur peut être l'utilisation de composants natifs compatibles avec l'API d'accessibilité de la plateforme dont les paramètres traduisent la même information que la couleur.</p>
+			<h3 id="prise-de-focus">Prise de focus</h3>
+			<p>La prise de focus est l'état renvoyé par un élément qui reçoit l'attention suite à une action de l'utilisateur. Il y a trois moyens de donner le focus à un élément&nbsp;:</p>
+			<ul>
+			  <li>en activant l'élément par un dispositif de pointage (souris)&nbsp;;</li>
+			  <li>en activant l'élément par la touche tabulation&nbsp;;</li>
+			  <li>en activant l'élément par un raccourci clavier.</li>
+			</ul>
+			<p>Le critère demande que la prise de focus soit visible, quel que soit le moyen de cette visibilité. Il peut s'agir d'un effet de bordure, d'un changement dans l'aspect du composant par exemple la couleur de fond, etc.</p>
+
+			<h2 id="r">R</h2>
+
+			<h3 id="raccourcis-claviers">Raccourcis clavier propres à la plateforme</h3>
+			<p>Les plateformes mettent à disposition un ensemble de raccourcis clavier pour activer des fonctionnalités. Ces raccourcis ne doivent pas être surchargés par le logiciel qui ne doit pas attribuer une autre fonctionnalité à ces raccourcis déjà définis.</p>
+			<p>À titre d'information, voici les listes des raccourcis clavier disponibles sur les principales plateformes&nbsp;:</p>
+			<ul>
+				<li><a href="https://support.microsoft.com/fr-fr/help/126449/keyboard-shortcuts-for-windows?cm_mc_uid=07488224927614992568394&cm_mc_sid_50200000=1501834143">Raccourcis clavier pour Windows</a>&nbsp;;</li>
+				<li><a href="https://support.apple.com/fr-fr/HT201236">Mac&nbsp;: raccourcis clavier</a> et <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXKeyboardShortcuts.html#//apple_ref/doc/uid/TP40001078-CH253-CHDIGFBH" hreflang="en">raccourcis clavier dédiés à l'accessibilité</a>&nbsp;;</li>
+				<li><a href="https://developer.gnome.org/hig-book/3.4/input-keyboard.html.en?cm_mc_uid=07488224927614992568394&cm_mc_sid_50200000=1501834143" hreflang="en">Raccourcis clavier pour Gnome (Linux, ressource en anglais)</a>.</li>
+			</ul>
+
+			<h3 id="rsum-de-tableau">Résumé (de tableau)</h3>
+			<p>Un résumé est un passage de texte associé à un tableau de données complexe. Il permet de donner des informations sur la nature et la structure du tableau afin d'en faciliter l'utilisation par les utilisateurs de technologies d'assistance par exemple.</p>
+
+			<h2 id="s">S</h2>
+
+			<h3 id="soustitres-synchroniss-objet-multimdia">Sous-titres synchronisés (objet multimédia)</h3>
+			<p>Texte des informations audio (paroles d'un personnage, bruit important pour comprendre l'action&hellip;) présentes dans un média temporel et affiché de manière synchrone avec le flux de l'objet multimédia.</p>
+			<p><strong>Note 1&nbsp;:</strong> pour différencier les sources sonores (différents personnages, voix off&hellip;), il est recommandé d'utiliser un mécanisme approprié (mise entre crochets, mise en italique, annonce explicite du type «&nbsp;voix off&nbsp;: &hellip;&nbsp;»).</p>
+			<p><strong>Note 2&nbsp;:</strong> il ne faut pas confondre le sous-titrage pour la traduction et le sous-titrage pour sourds et malentendants. Ces deux types de sous-titrage poursuivent des buts différents. Seules la présence et la pertinence d'un sous-titrage pour sourds et malentendants permettent d'être conforme.</p>
+
+			<h2 id="t">T</h2>
+
+			<h3 id="tableau-de-donnes">Tableau de données</h3>
+			<p>Élément permettant de structurer des informations en lignes et en colonnes via des cellules de données et des cellules d'en-têtes.</p>
+
+			<h3 id="tableau-de-donnes-complexe">Tableau de données complexe</h3>
+			<p>Lorsqu'un tableau de données contient des en-têtes qui ne sont pas répartis uniquement sur la première ligne et/ou la première colonne de la grille ou dont la portée n'est pas valable pour l'ensemble de la colonne ou de la ligne, on parle de tableau de données complexe. Il est alors nécessaire de fournir un «&nbsp;résumé&nbsp;» permettant d'en expliquer sa nature et sa structure afin d'en faciliter la consultation pour des utilisateurs de technologies d'assistance par exemple.</p>
+
+			<h3 id="taille-suffisante">Taille suffisante</h3>
+			<p>Les éléments interactifs comme les boutons et les zones de texte activables peuvent être difficiles à manipuler s'ils ont une taille insuffisante sur des écrans de périphériques de petite taille, ou en haute résolution.</p>
+			<p>La taille de ces zones n'est pas définie en pixel, mais en millimètre afin de tenir compte des tailles physiques réelles des périphériques d'affichage et de la densité en pixels qu'ils utilisent.</p>
+			<p>Il appartient aux développeurs de s'assurer, quelle que soit la taille en pixel utilisée, que les composants interactifs ont une taille restituée de 9mm x 9mm au moins pour être utilisés sur les écrans en haute résolution notamment.</p>
+
+			<h3 id="titre">Titre</h3>
+			<p>Élément d'interface permettant de titrer des parties des interfaces. Selon la technologie, on parle de titre ou d'en-tête par exemple. Les titres permettent de donner une structure au contenu et de faciliter la navigation pour les utilisateurs au clavier via des commandes claviers dédiées.</p>
+
+			<h3 id="titreTab">Titre d'un tableau (de données)</h3>
+			<p>Texte relié au tableau qui permet d'identifier le contenu d'un tableau de données de manière claire et concise.</p>
+
+			<h3 id="titrePage">Titre d'écran</h3>
+			<p>Phrase permettant d'identifier de manière claire, concise et unique les contenus/la nature de l'écran. Dans les plateformes les plus répandues, les titres des écrans se situent généralement en haut de la fenêtre de l'interface graphique. C'est généralement le premier élément vocalisé à l'affichage de l'écran et les technologies d'assistance mettent à disposition un raccourci clavier pour le restituer à la demande.</p>
+
+			<h3 id="transcription-textuelle-media-temporel">Transcription textuelle (média temporel)</h3>
+			<p>Contenu textuel associé à un média temporel par la technique appropriée (texte présent dans l'interface ou dans un fichier texte qui se trouve dans le même écran ou consultatble grâce à un bouton). Ce contenu donne accès à l'utilisateur (de manière indépendante de la consultation de l'objet multimédia) à&nbsp;:</p>
+			<ul>
+			  <li>La totalité de ce qui y est exprimé oralement.</li>
+			  <li>Toutes les informations descriptives nécessaires à une compréhension équivalente de l'action.</li>
+			</ul>
+			<p>Ces informations textuelles doivent être présentées dans l'ordre chronologique de leur apparition dans le média temporel.</p>
+
+			<h3 id="type-et-format-de-donnes">Type et format de données</h3>
+
+				<p>Indication concernant le type et le format des données attendus lors de la saisie d'un champ de formulaire. Par exemple&nbsp;:</p>
+				<ul>
+				  <li>Date (jj/mm/aaaa)&nbsp;;</li>
+				  <li>Montant en euros&nbsp;;</li>
+				  <li>Code postal (5 chiffres&nbsp;: ex. 75001).</li>
+				</ul>
+				<p><strong>Note importante&nbsp;:</strong> lorsque le type de champ de formulaire propose un masque de saisie, comme par exemple les champs <code lang="en">date</code> ou <code lang="en">time</code>, l'indication de format n'est pas nécessaire.</p>
+
+
+			<h2 id="u">U</h2>
+
+			<h3 id="uniquement--des-fins-de-prsentation">Uniquement à des fins de présentation</h3>
+			<p>Uniquement à des fins de présentation&nbsp;: utilisation des éléments d'interface pour une finalité différente de celle prévue dans les spécifications. Par exemple, une utilisation détournée dans une application pourrait être l'utilisation d'un texte simple comme élément interactif (pouvant être activé).</p>
+
+			<h2 id="v">V</h2>
+
+
+			<h3 id="version-accessible-document">Version accessible (pour un document en téléchargement)</h3>
+			<p>Les documents en téléchargement dont les types de formats sont reconnus compatibles avec l'accessibilité doivent être rendus accessibles soit directement, soit par l'intermédiaire d'une version accessible. Les formats de document dont la compatibilité est reconnue sont&nbsp;:</p>
+				<ul>
+				  <li>Microsoft Office (<span lang="en">Word</span> 2003, OOXML)&nbsp;;</li>
+				  <li>Open Office Org (ODF)&nbsp;;</li>
+				  <li>Adobe PDF&nbsp;;</li>
+				  <li><span lang="en">ePub</span>/Daisy.</li>
+				</ul>
+				<p>Les contenus doivent être conformes à la <a href="http://references.modernisation.gouv.fr/sites/default/files/liste-criteres-documents-bureautiques-telechargement-RGAA.odt">liste des critères Documents bureautiques en téléchargement (format ODT, 74 kilo-octets)</a>.</p>
+				<p><strong>Note</strong>&nbsp;: le format txt ne peut pas être utilisé pour produire une version accessible pour un document en téléchargement.</p>
+
+
+			<h3 id="version-alternative-audio-seulement">Version alternative «&nbsp;audio seulement&nbsp;»</h3>
+			<p>Une version «&nbsp;audio seulement&nbsp;» est une version sonore, sous la forme d'un simple fichier au format MP3 par exemple, utilisée comme alternative à une vidéo seulement (vidéo sans information sonore). Les seuls utilisateurs impactés par l'accessibilité étant les personnes aveugles, qui ne peuvent pas voir la vidéo, WCAG considère comme acceptable de proposer en alternative une version sonore.</p>
+			<p>La version «&nbsp;audio seulement&nbsp;» doit contenir toutes les informations visuelles importantes de la vidéo.</p>
+			<p>Généralement, il est plus simple de produire une version sonore qu'une version textuelle lorsque la vidéo est très descriptive (la transcription textuelle nécessitant souvent un travail rédactionnel important). Il est rappelé, néanmoins, que seule la transcription textuelle assure un accès universel aux informations diffusées par la vidéo, dans le cas où un utilisateur ne serait pas en capacité de lancer la vidéo par exemple.</p>
+
+			<h2 id="z">Z</h2>
+			
+			<h3 id="zone-sensible">Zone sensible</h3>
+			<p>Zone interactive de l'écran associée à une interaction gestuelle. Les zones sensibles recouvrent les boutons,les contrôles de formulaire ou tout autre élément interactif.</p>
+		</main>
+	</section>
+
+	</div>
+
+	<footer role="contentinfo">
+		<h2>Licence</h2>
+		<p><img width="69" height="93" class="sgmap-logo" src="img/modernisation-logo.jpg" alt="Secrétariat général pour la modernisation de l'action publique" /> Ce document est un document de l'État placé sous <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ultérieure</a>, comme tous les documents hébergés sur <a href="http://references.modernisation.gouv.fr">references.modernisation.gouv.fr</a>. Voir les conditions d'utilisation de la licence dans les <a href="http://references.modernisation.gouv.fr/mentions-legales">mentions légales</a>.</p>
+	<hr/>
+	<div class="legal-info">
+		<p>Réalisation SGMAP - 2017</p>
+	</div>
+	</footer>
+</body>
+</html>
